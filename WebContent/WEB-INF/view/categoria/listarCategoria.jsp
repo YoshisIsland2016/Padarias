@@ -6,6 +6,7 @@
 <title>Listando Categorias</title>
 </head>
 <body>
+	<c:import url="../../../menu.jsp" />
 	<table>
 		<tr>
 		<th>Id</th>

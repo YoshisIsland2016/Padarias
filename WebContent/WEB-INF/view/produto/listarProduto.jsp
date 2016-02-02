@@ -6,6 +6,7 @@
 <title>Listando Produtos</title>
 </head>
 <body>
+	<c:import url="../../../menu.jsp" />
 	<table>
 		<tr>
 		<th>Id</th>
@@ -23,7 +24,16 @@
 			<td>${produto.nome_produto}</td>
 			<td>${produto.categoriafk}</td>		
 			<td>${produto.preco}</td>
-			<td>${produto.promocao}</td>
+			<td>
+			<c:choose>
+				<c:when test="${produto.promocao}">
+					Sim
+				</c:when>
+				<c:otherwise>
+					Não
+				</c:otherwise>
+			</c:choose>
+			</td>
 			<td>${produto.imagem}</td>
 			<td><a href="removerProduto?id=${produto.id_produto}">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>

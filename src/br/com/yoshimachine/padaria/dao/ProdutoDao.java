@@ -52,8 +52,8 @@ public class ProdutoDao {
 			
 			while(rs.next()){
 				Produto produto = new Produto();
-				produto.setId_produto(rs.getInt("id"));
-				produto.setNome_produto(rs.getString("nome"));
+				produto.setId_produto(rs.getInt("id_produto"));
+				produto.setNome_produto(rs.getString("nome_produto"));
 				produto.setCategoriafk(rs.getInt("categoriafk"));
 				produto.setPreco(rs.getFloat("preco"));
 				produto.setPromocao(rs.getBoolean("promocao"));

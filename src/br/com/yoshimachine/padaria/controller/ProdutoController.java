@@ -25,9 +25,9 @@ public class ProdutoController {
 		return "produto/listarProduto";
 	}
 	@RequestMapping("removerProduto")
-	public String removerProduto(Produto produto){
+	public String removerProduto(int id){
 		ProdutoDao dao = new ProdutoDao();
-		dao.getRemover(produto.getId_produto());
+		dao.getRemover(id);
 		
 		return "redirect:listarProduto"; 
 	}
