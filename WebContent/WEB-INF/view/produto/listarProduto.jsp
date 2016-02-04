@@ -7,6 +7,20 @@
 </head>
 <body>
 	<c:import url="../../../menu.jsp" />
+	<p></p>
+	<form action="buscarProduto" >
+		<h3>Buscar Produto:</h3><br/>
+		Nome:
+		<input type="text" name="nome_produto"/>
+		<br/>
+		Categoria:
+		<input type="text" name="categoriafk"/>
+		<br/>
+		Promocao:
+		<input type="text" name="promocao"/>
+		<br/>
+		<input type="submit" value="Buscar"/>
+	</form>
 	<table>
 		<tr>
 		<th>Id</th>
@@ -30,7 +44,7 @@
 					Sim
 				</c:when>
 				<c:otherwise>
-					Não
+					NÃ£o
 				</c:otherwise>
 			</c:choose>
 			</td>

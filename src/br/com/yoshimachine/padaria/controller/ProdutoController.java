@@ -45,4 +45,12 @@ public class ProdutoController {
 		
 		return "redirect:listarProduto";
 	}
+	@RequestMapping("buscarProduto")
+	public String buscarProduto(Produto produto,Model model){
+		ProdutoDao dao = new ProdutoDao();
+				
+		model.addAttribute("produtos",dao.getBuscar(produto.getNome_produto(), produto.getCategoriafk(), produto.isPromocao()));
+		
+		return "produto/listarProduto";
+	}
 }

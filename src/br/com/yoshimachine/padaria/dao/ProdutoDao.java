@@ -126,8 +126,8 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	public List<Produto> getBuscar(String nome,int categoriafk){
-		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ?";
+	public List<Produto> getBuscar(String nome,int categoriafk,boolean promocao){
+		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? OR categoriafk = ? OR promocao = ?";
 		List<Produto> produtos = new ArrayList<Produto>();
 		
 		try{
@@ -135,6 +135,7 @@ public class ProdutoDao {
 			
 			stmt.setString(1, "%"+nome+"%");			
 			stmt.setLong(2, categoriafk);
+			stmt.setBoolean(3, promocao);
 			
 			ResultSet rs = stmt.executeQuery();
 			
