@@ -2,6 +2,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
+<script>
+function remover(id_produto)
+{
+	if (confirm("Você tem certeza que deseja remover este item?"))
+	{
+		location.href="removerProduto?id="+id_produto;	
+	}	
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Produtos</title>
 </head>
@@ -49,7 +58,7 @@
 			</c:choose>
 			</td>
 			<td>${produto.imagem}</td>
-			<td><a href="removerProduto?id=${produto.id_produto}">Remover</a></td>
+			<td><a onclick="remover(${produto.id_produto})">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>
 		</c:forEach>
