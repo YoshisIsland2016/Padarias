@@ -2,15 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
-<script>
-function remover(id_produto)
-{
-	if (confirm("Você tem certeza que deseja remover este item?"))
-	{
-		location.href="removerProduto?id="+id_produto;	
-	}	
-}
-</script>
+<script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Produtos</title>
 </head>
