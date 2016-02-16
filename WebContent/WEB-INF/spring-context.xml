@@ -14,9 +14,12 @@
 	<mvc:annotation-driven />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="prefix" value="/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- Para suportar CSS e JS -->
+	<mvc:default-servlet-handler/>
 	
 	<mvc:resources mapping="/script/**" location="/, classpath:/WEB-INF/script/" /> 
 </beans>

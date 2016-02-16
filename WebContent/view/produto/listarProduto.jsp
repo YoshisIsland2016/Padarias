@@ -15,7 +15,7 @@ function remover(id_produto)
 <title>Listando Produtos</title>
 </head>
 <body>
-	<c:import url="../../../menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
 	<p></p>
 	<form action="buscarProduto" >
 		<h3>Buscar Produto:</h3><br/>

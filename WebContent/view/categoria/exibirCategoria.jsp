@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
 	<hr><h3>Cadastrar Categoria</h3><hr>
 	<form action="salvarCategoria" method="post">
 		<p>

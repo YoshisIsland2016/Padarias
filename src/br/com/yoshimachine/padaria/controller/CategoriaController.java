@@ -9,6 +9,12 @@ import br.com.yoshimachine.padaria.model.Categoria;
 
 @Controller
 public class CategoriaController {
+	
+	@RequestMapping("exibirSalvarCategoria")
+	public String exibirSalvarCategoria()
+	{		
+		return "categoria/exibirCategoria";
+	}
 	@RequestMapping("salvarCategoria")
 	public String SalvarCategoria(Categoria categoria){
 		

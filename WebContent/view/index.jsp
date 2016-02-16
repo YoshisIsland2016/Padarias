@@ -6,10 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="../../../menu.jsp" />
-	<hr>
-	<h3>Incluir Categoria</h3>
-	<hr>
-	<h2> Categoria Incluída com Sucesso ! </h2>
+	<c:import url="/view/comum/menu.jsp" />
 </body>
 </html>

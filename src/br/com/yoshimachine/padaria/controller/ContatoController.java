@@ -9,6 +9,12 @@ import br.com.yoshimachine.padaria.model.Contato;
 
 @Controller
 public class ContatoController {
+	
+	@RequestMapping("exibirSalvarContato")
+	public String exibirSalvarContato()
+	{		
+		return "contato/exibirContato";
+	}
 	@RequestMapping("salvarContato")
 	public String SalvarProduto(Contato contato){
 		

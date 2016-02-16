@@ -6,6 +6,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
+	<hr>
+	<h3>Incluir Contato</h3>
+	<hr>
+	<h2> Contato incluido com Sucesso ! </h2>
 </body>
 </html>

@@ -15,7 +15,7 @@ function remover(id_categoria)
 <title>Listando Categorias</title>
 </head>
 <body>
-	<c:import url="../../../menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
 	<table>
 		<tr>
 		<th>Id</th>

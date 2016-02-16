@@ -9,6 +9,13 @@ import br.com.yoshimachine.padaria.model.Produto;
 
 @Controller
 public class ProdutoController {
+	
+	@RequestMapping("exibirSalvarProduto")
+	public String exibirSalvarProduto()
+	{		
+		return "produto/exibirProduto";
+	}
+	
 	@RequestMapping("salvarProduto")
 	public String SalvarProduto(Produto produto){
 		

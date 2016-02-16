@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="../../../menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
 	<h3>Alterar Contato - ${contato.id_contato}</h3>
 	<form action="alterarContato" method="post">
 		<input type="hidden" name="id_contato" value="${contato.id_contato}" />
