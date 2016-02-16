@@ -5,7 +5,7 @@ public class Produto {
 	private int id_produto;
 	private String nome_produto;
 	private int categoriafk;
-	private float preco;
+	private double preco;
 	private boolean promocao;
 	private String imagem;
 	
@@ -27,10 +27,10 @@ public class Produto {
 	public void setCategoriafk(int categoriafk) {
 		this.categoriafk = categoriafk;
 	}
-	public float getPreco() {
+	public double getPreco() {
 		return preco;
 	}
-	public void setPreco(float preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 	public boolean isPromocao() {

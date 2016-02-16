@@ -53,12 +53,12 @@ function remover(id_produto)
 					Sim
 				</c:when>
 				<c:otherwise>
-					NÃ£o
+					Não
 				</c:otherwise>
 			</c:choose>
 			</td>
 			<td>${produto.imagem}</td>
-			<td><a onclick="remover(${produto.id_produto})">Remover</a></td>
+			<td><a href="#" onclick="remover(${produto.id_produto})">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>
 		</c:forEach>

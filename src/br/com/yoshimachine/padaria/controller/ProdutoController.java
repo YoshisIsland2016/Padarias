@@ -56,7 +56,7 @@ public class ProdutoController {
 	public String buscarProduto(Produto produto,Model model){
 		ProdutoDao dao = new ProdutoDao();
 				
-		model.addAttribute("produtos",dao.getBuscar(produto.getNome_produto(), produto.getCategoriafk(), produto.isPromocao()));
+		model.addAttribute("produtos",dao.getBuscar(produto));
 		
 		return "produto/listarProduto";
 	}

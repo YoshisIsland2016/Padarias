@@ -55,7 +55,7 @@ public class ProdutoDao {
 				produto.setId_produto(rs.getInt("id_produto"));
 				produto.setNome_produto(rs.getString("nome_produto"));
 				produto.setCategoriafk(rs.getInt("categoriafk"));
-				produto.setPreco(rs.getFloat("preco"));
+				produto.setPreco(rs.getDouble("preco"));
 				produto.setPromocao(rs.getBoolean("promocao"));
 				produto.setImagem(rs.getString("imagem"));
 				
@@ -77,7 +77,7 @@ public class ProdutoDao {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, produto.getNome_produto());
 			stmt.setInt(2, produto.getCategoriafk());
-			stmt.setFloat(3, produto.getPreco());
+			stmt.setDouble(3, produto.getPreco());
 			stmt.setBoolean(4, produto.isPromocao());
 			stmt.setString(5, produto.getImagem());			
 			stmt.setInt(6, produto.getId_produto());
@@ -126,16 +126,16 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	public List<Produto> getBuscar(String nome,int categoriafk,boolean promocao){
-		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? OR categoriafk = ? OR promocao = ?";
+	public List<Produto> getBuscar(Produto produto_consulta){
+		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? OR categoriafk = ? AND promocao = ?";
 		List<Produto> produtos = new ArrayList<Produto>();
 		
 		try{
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setString(1, "%"+nome+"%");			
-			stmt.setLong(2, categoriafk);
-			stmt.setBoolean(3, promocao);
+			stmt.setString(1, "%"+produto_consulta.getNome_produto()+"%");			
+			stmt.setLong(2, produto_consulta.getCategoriafk());
+			stmt.setBoolean(3, produto_consulta.isPromocao());
 			
 			ResultSet rs = stmt.executeQuery();
 			
@@ -144,7 +144,7 @@ public class ProdutoDao {
 				produto.setId_produto(rs.getInt("id_produto"));
 				produto.setNome_produto(rs.getString("nome_produto"));
 				produto.setCategoriafk(rs.getInt("categoriafk"));
-				produto.setPreco(rs.getFloat("preco"));
+				produto.setPreco(rs.getDouble("preco"));
 				produto.setPromocao(rs.getBoolean("promocao"));
 				produto.setImagem(rs.getString("imagem"));
 				
@@ -167,7 +167,7 @@ public class ProdutoDao {
         produto.setId_produto(rs.getInt("id_produto"));
         produto.setNome_produto(rs.getString("nome_produto"));
         produto.setCategoriafk(rs.getInt("categoriafk"));
-        produto.setPreco(rs.getFloat("preco"));
+        produto.setPreco(rs.getDouble("preco"));
         produto.setPromocao(rs.getBoolean("promocao"));
         produto.setImagem(rs.getString("imagem"));
         
