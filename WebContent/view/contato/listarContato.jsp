@@ -3,6 +3,16 @@
 <html>
 <head>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
+<script>
+function remover(id_contato){
+	
+	if(confirm("Deseja remover?"))
+	{
+		location.href="removerContato?id="+id_contato;		
+	}
+	
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Contatos</title>
 </head>

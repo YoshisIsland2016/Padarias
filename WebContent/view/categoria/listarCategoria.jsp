@@ -3,6 +3,16 @@
 <html>
 <head>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
+<script>
+function remover(id_categoria){
+	
+	if(confirm("Deseja remover?"))
+	{
+		location.href="removerCategoria?id="+id_categoria;		
+	}
+	
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Categorias</title>
 </head>

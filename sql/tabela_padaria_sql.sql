@@ -10,13 +10,11 @@ CREATE TABLE contatos(
 	telefone VARCHAR(14)
 	);
 
-CREATE TABLE administradores(
+CREATE TABLE administrador(
 
 	id_administrador INT PRIMARY KEY AUTO_INCREMENT,    	
 	login VARCHAR(30) NOT NULL,
-	senha VARCHAR(40) NOT NULL,
-	nome VARCHAR(30) NOT NULL,
-	telefone VARCHAR(14) NOT NULL
+	senha VARCHAR(40) NOT NULL
 	);
 
 CREATE TABLE categorias(
