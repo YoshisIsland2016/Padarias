@@ -35,4 +35,4 @@ CREATE TABLE produtos(
 	FOREIGN KEY(categoriafk) REFERENCES categorias(id_categoria)
 	);
 
-INSERT INTO administradores(login,senha,nome,telefone) VALUES('admin',sha1('admin'),'Administrador','3481-4656');
+INSERT INTO administrador(login,senha) VALUES('admin',sha1('admin'));
