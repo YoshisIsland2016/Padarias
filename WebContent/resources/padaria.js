@@ -1,8 +1,8 @@
-function remover(id_produto){
-	
-	if(confirm("Deseja remover o produto?"))
+function remover(id, opcao)
+{
+	alert(opcao);
+	if (confirm("tem certeza que deseja remover este item?"))
 	{
-		location.href="removerProduto?id="+id_produto;		
-	}
-	
+		location.href="remover"+opcao+"?id="+id;	
+	}	
 }
