@@ -60,7 +60,7 @@ function remover(id_produto){
 			</c:choose>
 			</td>
 			<td>${produto.imagem}</td>
-			<td><a href="#" onclick="remover(${produto.id_produto})">Remover</a></td>
+			<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>
 		</c:forEach>

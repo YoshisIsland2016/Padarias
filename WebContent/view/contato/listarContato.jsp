@@ -33,7 +33,7 @@ function remover(id_contato){
 			<td>${contato.email}</td>
 			<td>${contato.nome}</td>
 			<td>${contato.telefone}</td>					
-			<td><a href="#" onclick="remover(${contato.id_contato})">Remover</a></td>
+			<td><a href="#" onclick="remover(${contato.id_contato},'Contato')">Remover</a></td>
 			<td><a href="mostrarContato?id=${contato.id_contato}">Editar</a></td>
 		</tr>
 		</c:forEach>

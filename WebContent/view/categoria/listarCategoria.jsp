@@ -31,7 +31,7 @@ function remover(id_categoria){
 			<td>${categoria.id_categoria}</td>
 			<td>${categoria.nome_categoria}</td>
 			<td>${categoria.descricao}</td>					
-			<td><a href="#" onclick="remover(${categoria.id_categoria})">Remover</a></td>
+			<td><a href="#" onclick="remover(${categoria.id_categoria},'Categoria')">Remover</a></td>
 			<td><a href="mostrarCategoria?id=${categoria.id_categoria}">Editar</a></td>
 		</tr>
 		</c:forEach>
