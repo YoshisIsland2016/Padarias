@@ -3,16 +3,6 @@
 <html>
 <head>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
-<script>
-function remover(id_produto){
-	
-	if(confirm("Deseja remover o produto?"))
-	{
-		location.href="removerProduto?id="+id_produto;		
-	}
-	
-}
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Produtos</title>
 </head>
