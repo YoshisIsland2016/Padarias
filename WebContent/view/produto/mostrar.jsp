@@ -12,17 +12,48 @@
 	<form action="alterarProduto" method="post">
 		<input type="hidden" name="id_produto" value="${produto.id_produto}" />
 		Nome:<br />		
-		<input type="text" name="nome_produto" value="${produto.nome_produto}"/>
+		<input type="text" name="nome_produto" />
 		<br />Categoria:<br />
-		<input type="text" name="categoriafk" value="${produto.categoriafk}"/>
+		<input type="text" name="categoriafk" />
 		<br />Preco:<br />
-		<input type="text" name="preco" value="${produto.preco}"/>
+		<input type="text" name="preco" />
 		<br />Promocao:<br />
 		<input type="text" name="promocao" value="${produto.promocao }" />
 		<br />Imagem:<br />
 		<input type="text" name="imagem" value="${produto.imagem}"/>
 		<br /><br />
-		<input type="submit" value="Alterar"/>
+		<p>
+			Nome: <br />
+			<input type="text" name="nome_produto" value="${produto.nome_produto}" />
+		</p>
+		<p>
+			Categoria: <br />
+			<input type="text" name="categoriafk" value="${produto.categoriafk}"/>
+		</p>
+		<p>
+			Preco: <br />
+			<input type="text" name="preco" value="${produto.preco}"/>
+		</p>
+		Promocao: <br/>
+		<select name="promocao">			
+			<c:choose>
+				<c:when test="${not empty contato.email}">
+					<option value="1">Sim</option>
+					<option value="0">Não</option>
+				</c:when>
+				<c:otherwise>
+					<option value="0">Não</option>
+					<option value="1">Sim</option>
+				</c:otherwise>
+			</c:choose>
+		</select>
+		<p>
+			Imagem: <br />
+			<img src="/view/produto/img/${produto.imagem}" />
+		</p>
+		<p> 
+			<input type="submit" value="Alterar">
+		</p>		
 	</form>
 </body>
 </html>
