@@ -11,24 +11,18 @@
 	<h3>Alterar Produto - ${produto.id_produto}</h3>
 	<form action="alterarProduto" method="post">
 		<input type="hidden" name="id_produto" value="${produto.id_produto}" />
-		Nome:<br />		
-		<input type="text" name="nome_produto" />
-		<br />Categoria:<br />
-		<input type="text" name="categoriafk" />
-		<br />Preco:<br />
-		<input type="text" name="preco" />
-		<br />Promocao:<br />
-		<input type="text" name="promocao" value="${produto.promocao }" />
-		<br />Imagem:<br />
-		<input type="text" name="imagem" value="${produto.imagem}"/>
-		<br /><br />
 		<p>
 			Nome: <br />
 			<input type="text" name="nome_produto" value="${produto.nome_produto}" />
 		</p>
 		<p>
 			Categoria: <br />
-			<input type="text" name="categoriafk" value="${produto.categoriafk}"/>
+			<select name="categoriafk" >
+				<option value=""> Selecione </option>
+				<c:forEach items="${listaCategoriaProduto}" var="obj">
+					<option value="${obj.id_categoria}" <c:if test="${obj.id_categoria eq produto.categoriafk.id_categoria}">selected="selected"</c:if>> ${obj.nome_categoria} </option>
+				</c:forEach> 
+			</select>
 		</p>
 		<p>
 			Preco: <br />
@@ -37,7 +31,7 @@
 		Promocao: <br/>
 		<select name="promocao">			
 			<c:choose>
-				<c:when test="${not empty contato.email}">
+				<c:when test="${produto.promocao}">
 					<option value="1">Sim</option>
 					<option value="0">Não</option>
 				</c:when>
@@ -50,6 +44,9 @@
 		<p>
 			Imagem: <br />
 			<img src="/view/produto/img/${produto.imagem}" />
+		</p>
+		<p>
+			<textarea rows="10" cols="30" name="descricao">${produto.descricao }</textarea>
 		</p>
 		<p> 
 			<input type="submit" value="Alterar">

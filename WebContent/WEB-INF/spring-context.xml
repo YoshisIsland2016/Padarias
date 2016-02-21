@@ -11,7 +11,7 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
 	<context:component-scan base-package="br.com.yoshimachine.padaria" />
-	<mvc:annotation-driven />
+	<mvc:annotation-driven conversion-service="conversionService" />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/" />
@@ -27,4 +27,12 @@
 		<property name="maxUploadSize" value="999999999999999" />
 	</bean>
 	
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="br.com.yoshimachine.padaria.controller.CategoriaProdutoConverter" />
+			</list>
+		</property>
+	</bean>
+
 </beans>

@@ -32,6 +32,7 @@ CREATE TABLE produtos(
 	preco REAL NOT NULL,
 	promocao BOOLEAN NOT NULL,
 	imagem VARCHAR(255) NOT NULL,
+	descricao VARCHAR(2000) NOT NULL,
 	FOREIGN KEY(categoriafk) REFERENCES categorias(id_categoria)
 	);
 

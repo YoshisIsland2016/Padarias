@@ -22,17 +22,18 @@ public class ProdutoDao {
 		}
 	}
 	public void getSalvar(Produto produto){
-		String sql = "INSERT INTO produtos (nome_produto, categoriafk, preco, promocao, imagem) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO produtos (nome_produto, categoriafk, preco, promocao, imagem,descricao) VALUES (?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(1, produto.getNome_produto());
-			stmt.setInt(2, produto.getCategoriafk());
+			stmt.setLong(2,produto.getCategoriafk().getId_categoria());
 			stmt.setDouble(3, produto.getPreco());
 			stmt.setBoolean(4, produto.isPromocao());
 			stmt.setString(5, produto.getImagem());
-						
+			stmt.setString(6, produto.getDescricao());	
+			
 			stmt.execute();
 			stmt.close();
 			con.close();			
@@ -49,15 +50,10 @@ public class ProdutoDao {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			ResultSet rs = stmt.executeQuery();
-			
+						
 			while(rs.next()){
 				Produto produto = new Produto();
-				produto.setId_produto(rs.getInt("id_produto"));
-				produto.setNome_produto(rs.getString("nome_produto"));
-				produto.setCategoriafk(rs.getInt("categoriafk"));
-				produto.setPreco(rs.getDouble("preco"));
-				produto.setPromocao(rs.getBoolean("promocao"));
-				produto.setImagem(rs.getString("imagem"));
+				produto = montarObjeto(rs);
 				
 				produtos.add(produto);
 			}
@@ -71,16 +67,17 @@ public class ProdutoDao {
 		return produtos;
 	}
 	public boolean getAlterar(Produto produto){
-		String sql = "UPDATE produtos SET nome_produto=?,categoriafk=?,preco=?,promocao=?,imagem=? WHERE id_produto=?";
+		String sql = "UPDATE produtos SET nome_produto=?,categoriafk=?,preco=?,promocao=?,imagem=?,descricao=? WHERE id_produto=?";
 		
 		try{
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, produto.getNome_produto());
-			stmt.setInt(2, produto.getCategoriafk());
+			stmt.setLong(2, produto.getCategoriafk().getId_categoria());
 			stmt.setDouble(3, produto.getPreco());
 			stmt.setBoolean(4, produto.isPromocao());
 			stmt.setString(5, produto.getImagem());			
 			stmt.setInt(6, produto.getId_produto());
+			stmt.setString(7, produto.getDescricao());
 			
 			stmt.execute();			
 			stmt.close();
@@ -134,19 +131,14 @@ public class ProdutoDao {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(1, "%"+produto_consulta.getNome_produto()+"%");			
-			stmt.setLong(2, produto_consulta.getCategoriafk());
+			stmt.setLong(2, produto_consulta.getCategoriafk().getId_categoria());
 			stmt.setBoolean(3, produto_consulta.isPromocao());
 			
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next()){
 				Produto produto = new Produto();
-				produto.setId_produto(rs.getInt("id_produto"));
-				produto.setNome_produto(rs.getString("nome_produto"));
-				produto.setCategoriafk(rs.getInt("categoriafk"));
-				produto.setPreco(rs.getDouble("preco"));
-				produto.setPromocao(rs.getBoolean("promocao"));
-				produto.setImagem(rs.getString("imagem"));
+				produto = montarObjeto(rs);
 				
 				produtos.add(produto);
 			}
@@ -165,11 +157,14 @@ public class ProdutoDao {
         Produto produto = new Produto();
        
         produto.setId_produto(rs.getInt("id_produto"));
-        produto.setNome_produto(rs.getString("nome_produto"));
-        produto.setCategoriafk(rs.getInt("categoriafk"));
+        produto.setNome_produto(rs.getString("nome_produto"));  
         produto.setPreco(rs.getDouble("preco"));
         produto.setPromocao(rs.getBoolean("promocao"));
         produto.setImagem(rs.getString("imagem"));
+        produto.setDescricao(rs.getString("descricao"));
+        
+        CategoriaDao dao = new CategoriaDao();
+        produto.setCategoriafk(dao.buscaId(rs.getInt("categoriafk")));
         
         return produto;
     }

@@ -4,10 +4,11 @@ public class Produto {
 	
 	private int id_produto;
 	private String nome_produto;
-	private int categoriafk;
+	private Categoria categoriafk;
 	private double preco;
 	private boolean promocao;
 	private String imagem;
+	private String descricao;
 	
 	public int getId_produto() {
 		return id_produto;
@@ -21,10 +22,10 @@ public class Produto {
 	public void setNome_produto(String nome_produto) {
 		this.nome_produto = nome_produto;
 	}
-	public int getCategoriafk() {
+	public Categoria getCategoriafk() {
 		return categoriafk;
 	}
-	public void setCategoriafk(int categoriafk) {
+	public void setCategoriafk(Categoria categoriafk) {
 		this.categoriafk = categoriafk;
 	}
 	public double getPreco() {
@@ -44,6 +45,12 @@ public class Produto {
 	}
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }

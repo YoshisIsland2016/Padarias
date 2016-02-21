@@ -15,7 +15,12 @@
 		</p>
 		<p>
 			Categoria: <br />
-			<input type="text" name="categoriafk" />
+			<select name="categoriafk" >
+				<option value=""> Selecione </option>
+				<c:forEach items="${listaCategoriaProduto}" var="obj">
+					<option value="${obj.id_categoria}"> ${obj.nome_categoria} </option>
+				</c:forEach>
+			</select>
 		</p>
 		<p>
 			Preco: <br />
@@ -30,6 +35,10 @@
 		<p>
 			Imagem: <br />
 			<input type="file" name="file" />
+			<input type="hidden" name="imagem" />
+		</p>
+		<p>
+			<textarea rows="10" cols="30" name="descricao"></textarea>
 		</p>
 		<p> 
 			<input type="submit" value="Cadastrar">

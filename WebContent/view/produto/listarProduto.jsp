@@ -13,12 +13,22 @@
 		<h3>Buscar Produto:</h3><br/>
 		Nome:
 		<input type="text" name="nome_produto"/>
-		<br/>
-		Categoria:
-		<input type="text" name="categoriafk"/>
-		<br/>
+		<p>
+		
+			Categoria: 
+			<select name="categoriafk" >
+				<option value=""> Selecione </option>
+				<c:forEach items="${listaCategoriaProduto}" var="obj">
+					<option value="${obj.id_categoria}"> ${obj.nome_categoria} </option>
+				</c:forEach>
+			</select>
+		</p>
 		Promocao:
-		<input type="text" name="promocao"/>
+		<select name="promocao">			
+			<option> </option>
+			<option value="1">Sim</option>
+			<option value="0">Não</option>
+		</select>
 		<br/>
 		<input type="submit" value="Buscar"/>
 	</form>
@@ -30,6 +40,7 @@
 		<th>Preco</th>
 		<th>Promocao</th>
 		<th>Imagem</th>
+		<th>Descricao</th>
 		<th>Editar</th>
 		<th>Remover</th>
 		</tr>
@@ -37,7 +48,7 @@
 		<tr>
 			<td>${produto.id_produto}</td>
 			<td>${produto.nome_produto}</td>
-			<td>${produto.categoriafk}</td>		
+			<td>${produto.categoriafk.nome_categoria}</td>	
 			<td>${produto.preco}</td>
 			<td>
 			<c:choose>
@@ -50,6 +61,7 @@
 			</c:choose>
 			</td>
 			<td>${produto.imagem}</td>
+			<td>${produto.descricao }</td>
 			<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>
