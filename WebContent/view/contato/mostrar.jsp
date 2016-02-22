@@ -15,8 +15,7 @@
 		<input type="text" name="email" value="${contato.email}"/>
 		<br />Nome:<br />
 		<input type="text" name="nome" value="${contato.nome}"/>
-		<br />Telefone:<br />
-		<input type="text" name="telefone" value="${contato.telefone }"/><br />
+		
 		<input type="submit" value="Alterar"/>
 	</form>
 </body>

@@ -17,10 +17,9 @@
 		Nome: <br />
 		<input type="text" name="nome" />
 		</p>
-		<p>
-		Telefone: <br />
-		<input type="text" name="telefone" />
-		</p>		
+	
+		 
+				
 		<p> <input type="submit" value="Cadastrar"></p>
 	</form>
 </body>
