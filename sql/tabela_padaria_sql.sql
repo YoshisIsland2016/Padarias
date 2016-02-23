@@ -6,8 +6,7 @@ CREATE TABLE contatos(
 
     id_contato INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(70) NOT NULL UNIQUE,
-	nome VARCHAR(30) NOT NULL,
-	telefone VARCHAR(14)
+	nome VARCHAR(30) NOT NULL
 	);
 
 CREATE TABLE administrador(
