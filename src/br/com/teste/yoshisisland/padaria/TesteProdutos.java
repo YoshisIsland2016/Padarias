@@ -1,27 +1,26 @@
 package br.com.teste.yoshisisland.padaria;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-
 import org.junit.Assert;
 import org.junit.Test;
 
-
 import br.com.yoshimachine.padaria.dao.ProdutoDao;
+import br.com.yoshimachine.padaria.model.Categoria;
 import br.com.yoshimachine.padaria.model.Produto;
 
 public class TesteProdutos {
 	@Test
 	public void testeInserirProduto() {
 		
-		
-		
 		ProdutoDao dao = new ProdutoDao();
 		Produto produto = new Produto();
-
+		Categoria categoria = new Categoria();
+		
+		categoria.setId_categoria(1);
+		categoria.setNome_categoria("bolos");
+		categoria.setDescricao("tem muito acucar");
+		
 		produto.setId_produto(1);
 		produto.setNome_produto("opa");
-		produto.setCategoriafk("2");
+		produto.setCategoriafk(categoria);
 		produto.setPreco(0);
 		produto.setPromocao(false);
 		produto.setImagem("imagem");
