@@ -15,9 +15,21 @@
 		</p>
 		<p>
 		Nome: <br />
-		<input type="text" name="" />
+		<input type="text" name="email" />
 		</p>
-					
+		
+		<p>
+		<select name="nota">
+			<option value="0"></option>
+			<option value="1"></option>
+			<option value="2"></option>
+			<option value="3"></option>
+			<option value="4"></option>
+			<option value="5"></option>			
+		</select>
+		</p>
+		<input type="hidden" name="permissao" value="0" />
+		
 		<p> <input type="submit" value="Cadastrar"></p>
 	</form>
 </body>
