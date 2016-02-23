@@ -29,7 +29,6 @@ public class ContatoDao {
 			
 			stmt.setString(1, contato.getEmail());
 			stmt.setString(2, contato.getNome());
-			
 						
 			stmt.execute();
 			stmt.close();
@@ -53,8 +52,7 @@ public class ContatoDao {
 				contato.setId_contato(rs.getInt("id_contato"));
 				contato.setEmail(rs.getString("email"));
 				contato.setNome(rs.getString("nome"));
-								
-				
+									
 				contatos.add(contato);
 			}
 			rs.close();
@@ -137,7 +135,6 @@ public class ContatoDao {
 				contato.setEmail(rs.getString("email"));
 				contato.setNome(rs.getString("nome"));
 								
-				
 				contatos.add(contato);
 			}
 			
