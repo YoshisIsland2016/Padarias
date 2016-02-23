@@ -6,7 +6,8 @@ CREATE TABLE contatos(
 
     id_contato INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(70) NOT NULL UNIQUE,
-	nome VARCHAR(30) NOT NULL
+	nome VARCHAR(30) NOT NULL,
+	mensagem VARCHAR(20000) NOT NULL
 	);
 
 CREATE TABLE administrador(
@@ -33,6 +34,17 @@ CREATE TABLE produtos(
 	imagem VARCHAR(255) NOT NULL,
 	descricao VARCHAR(2000) NOT NULL,
 	FOREIGN KEY(categoriafk) REFERENCES categorias(id_categoria)
+	);
+
+CREATE TABLE avaliacao(
+	id_avaliação INT PRIMARY KEY AUTO_INCREMENT,
+	produtoid INT NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	nota VARCHAR(100) NOT NULL,
+	permissao BOOLEAN NOT NULL,
+	mensagem VARCHAR(2000) NOT NULL,
+	FOREIGN KEY(produtoid) REFERENCES produtos(id_produto)
 	);
 
 INSERT INTO administrador(login,senha) VALUES('admin',sha1('admin'));

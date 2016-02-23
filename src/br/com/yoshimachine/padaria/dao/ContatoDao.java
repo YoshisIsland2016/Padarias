@@ -32,7 +32,7 @@ public class ContatoDao {
 						
 			stmt.execute();
 			stmt.close();
-			con.close();			
+					
 		} catch (SQLException e) {			
 			e.printStackTrace();
 			throw new RuntimeException(e);
@@ -57,7 +57,7 @@ public class ContatoDao {
 			}
 			rs.close();
 			stmt.close();
-			con.close();
+			
 		}catch(SQLException e){
 			throw new RuntimeException(e);
 		}
@@ -71,11 +71,11 @@ public class ContatoDao {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, contato.getEmail());
 			stmt.setString(2, contato.getNome());
-			stmt.setInt(4, contato.getId_contato());
+			stmt.setInt(3, contato.getId_contato());
 			
 			stmt.execute();			
 			stmt.close();
-			con.close();
+			
 			return true;
 		}catch(SQLException e){
 			throw new RuntimeException(e);			
@@ -97,12 +97,35 @@ public class ContatoDao {
 			}
 			rs.close();
 			stmt.close();
-			con.close();
+			
 			return contato;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
 		}
 	}
+	public Contato buscaEmail(String email){
+		String sql = "SELECT * FROM contatos WHERE email like ?";
+				
+		try{
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, email);
+			
+			ResultSet rs = stmt.executeQuery();
+						
+			Contato contato = null;
+			
+			if(rs.next()){
+				contato = montarObjeto(rs);
+			}
+			rs.close();
+			stmt.close();
+			
+			return contato;
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public boolean getRemover(int id){
 		String sql = "DELETE FROM contatos WHERE id_contato=?";
 		
@@ -111,7 +134,7 @@ public class ContatoDao {
 			stmt.setInt(1, id);
 			
 			stmt.execute();
-			con.close();
+			
 			return true;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
@@ -140,7 +163,7 @@ public class ContatoDao {
 			
 			rs.close();
 			stmt.close();
-			con.close();
+			
 			
 			return contatos;
 		}catch(SQLException e){
@@ -157,5 +180,9 @@ public class ContatoDao {
                 
         return contato;
     }
+	
+	public void close() throws SQLException{
+		con.close();
+	}
 	
 }
