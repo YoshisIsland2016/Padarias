@@ -13,6 +13,7 @@
 		<th>Id</th>
 		<th>Email</th>
 		<th>Nome</th>
+		<th>Mensagem</th>
 		<th>Editar</th>
 		<th>Remover</th>
 		</tr>
@@ -20,7 +21,8 @@
 		<tr>
 			<td>${contato.id_contato}</td>
 			<td>${contato.email}</td>
-			<td>${contato.nome}</td>					
+			<td>${contato.nome}</td>
+			<td>${contato.mensagem }</td>					
 			<td><a href="#" onclick="remover(${contato.id_contato},'Contato')">Remover</a></td>
 			<td><a href="mostrarContato?id=${contato.id_contato}">Editar</a></td>
 		</tr>

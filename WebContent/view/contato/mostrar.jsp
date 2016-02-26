@@ -16,6 +16,13 @@
 		<br />Nome:<br />
 		<input type="text" name="nome" value="${contato.nome}"/>
 		
+		<p>
+			Mensagem: <br/>
+			<textarea rows="10" cols="30" name="mensagem">
+				${contato.mensagem}
+			</textarea>		 
+		</p>
+		
 		<input type="submit" value="Alterar"/>
 	</form>
 </body>

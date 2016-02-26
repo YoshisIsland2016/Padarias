@@ -75,9 +75,9 @@ public class ProdutoDao {
 			stmt.setLong(2, produto.getCategoriafk().getId_categoria());
 			stmt.setDouble(3, produto.getPreco());
 			stmt.setBoolean(4, produto.isPromocao());
-			stmt.setString(5, produto.getImagem());			
-			stmt.setInt(6, produto.getId_produto());
-			stmt.setString(7, produto.getDescricao());
+			stmt.setString(5, produto.getImagem());		
+			stmt.setString(6, produto.getDescricao());
+			stmt.setInt(7, produto.getId_produto());
 			
 			stmt.execute();			
 			stmt.close();
@@ -124,7 +124,7 @@ public class ProdutoDao {
 		}
 	}
 	public List<Produto> getBuscar(Produto produto_consulta){
-		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? OR categoriafk = ? AND promocao = ?";
+		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? AND promocao = ?";
 		List<Produto> produtos = new ArrayList<Produto>();
 		
 		try{

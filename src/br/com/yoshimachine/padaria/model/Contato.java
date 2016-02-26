@@ -5,7 +5,7 @@ public class Contato {
 	private int id_contato;
 	private String email;
 	private String nome;
-	
+	private String mensagem;
 	
 	public int getId_contato() {
 		return id_contato;
@@ -25,6 +25,11 @@ public class Contato {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+	public String getMensagem() {
+		return mensagem;
+	}
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
 	
 }

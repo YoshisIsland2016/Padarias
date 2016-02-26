@@ -22,14 +22,15 @@ public class ContatoDao {
 		}
 	}
 	public void getSalvar(Contato contato){
-		String sql = "INSERT INTO contatos (email, nome) VALUES (?,?)";
+		String sql = "INSERT INTO contatos (email, nome,mensagem) VALUES (?,?,?)";
 		
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(1, contato.getEmail());
 			stmt.setString(2, contato.getNome());
-						
+			stmt.setString(3, contato.getMensagem());
+			
 			stmt.execute();
 			stmt.close();
 					
@@ -52,8 +53,9 @@ public class ContatoDao {
 				contato.setId_contato(rs.getInt("id_contato"));
 				contato.setEmail(rs.getString("email"));
 				contato.setNome(rs.getString("nome"));
-									
+				contato.setMensagem(rs.getString("mensagem"));			
 				contatos.add(contato);
+				
 			}
 			rs.close();
 			stmt.close();
@@ -65,13 +67,14 @@ public class ContatoDao {
 		return contatos;
 	}
 	public boolean getAlterar(Contato contato){
-		String sql = "UPDATE contatos SET email=?,nome=? WHERE id_contato=?";
+		String sql = "UPDATE contatos SET email=?,nome=?,mensagem=? WHERE id_contato=?";
 		
 		try{
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, contato.getEmail());
 			stmt.setString(2, contato.getNome());
-			stmt.setInt(3, contato.getId_contato());
+			stmt.setString(3, contato.getMensagem());
+			stmt.setInt(4, contato.getId_contato());
 			
 			stmt.execute();			
 			stmt.close();
@@ -177,7 +180,8 @@ public class ContatoDao {
         contato.setId_contato(rs.getInt("id_contato"));
         contato.setEmail(rs.getString("email"));
         contato.setNome(rs.getString("nome"));
-                
+        contato.setMensagem(rs.getString("mensagem"));
+        
         return contato;
     }
 	

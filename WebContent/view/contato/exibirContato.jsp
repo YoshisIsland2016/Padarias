@@ -17,9 +17,10 @@
 		Nome: <br />
 		<input type="text" name="nome" />
 		</p>
-	
-		 
-				
+		<p>
+		Mensagem: <br/>
+		<textarea rows="10" cols="30" name="mensagem"></textarea>		 
+		</p>
 		<p> <input type="submit" value="Cadastrar"></p>
 	</form>
 </body>
