@@ -22,7 +22,9 @@ public class TesteContatos {
 
 		contato.setEmail("jorgedamaga@gmail.com");
 		contato.setNome("jorgedamaga");
-
+		contato.setMensagem("jorge é só da maga");
+		
+		
 		int qtdInicio = dao.getListar().size();  
 		dao.getSalvar(contato); 
 		int qtdFim = dao.getListar().size(); 
@@ -40,10 +42,32 @@ public class TesteContatos {
 		contato = dao.buscaEmail("jorgedamaga@gmail.com");
 		contato.setEmail("jorgedamaga2@gmail.com");
 		contato.setNome("jorgedamaga2");
+		contato .setMensagem("jorge danado da maga");
 		dao.getAlterar(contato);
 		contato = dao.buscaEmail("jorgedamaga@gmail.com");
 		dao.close();
 		Assert.assertEquals(null, contato);
 	}
+	
+	@Test
+	public void testeRemoverContato() throws SQLException {
+		
+		ContatoDao dao = new ContatoDao();
+		Contato contato = new Contato();
+		
+		contato.setId_contato(1);
+		
+		int qtdInicio = dao.getListar().size();
+		dao.getSalvar(contato);
+		int qtdFim = dao.getListar().size();
+		dao.close();
+		Assert.assertEquals(qtdInicio - 1, qtdFim);
+		
+		
+	}
+	
+	
+	
+	
 
 }
