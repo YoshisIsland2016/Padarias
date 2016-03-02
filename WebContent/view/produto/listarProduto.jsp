@@ -3,6 +3,31 @@
 <html>
 <head>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	function evento(){
+		var nome_produto = $('#nome_produto').val();
+		var categoriafk = $('#categoriafk').val();
+		var promocao = $('#promocao').val();
+		
+		$.post("buscarProduto",{'nome_produto' : nome_produto, 'categoriafk' : categoriafk, 'promocao' : promocao},
+		function(dados) {
+			$('#tabelaListaProduto').html(dados);	
+		});
+		
+	}
+	$("#nome_produto").keyup(function(){
+		evento();
+	});
+	$("#categoriafk").change(function(){
+		evento();
+	});
+	$("#promocao").change(function(){
+		evento();
+	});
+	
+});
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listando Produtos</title>
 </head>
@@ -12,11 +37,11 @@
 	<form action="buscarProduto" >
 		<h3>Buscar Produto:</h3><br/>
 		Nome:
-		<input type="text" name="nome_produto"/>
+		<input type="text" id="nome_produto" name="nome_produto"/>
 		<p>
 		
 			Categoria: 
-			<select name="categoriafk" >
+			<select id="categoriafk" name="categoriafk" >
 				<option value=""> Selecione </option>
 				<c:forEach items="${listaCategoriaProduto}" var="obj">
 					<option value="${obj.id_categoria}"> ${obj.nome_categoria} </option>
@@ -24,7 +49,7 @@
 			</select>
 		</p>
 		Promocao:
-		<select name="promocao">			
+		<select id="promocao" name="promocao">			
 			<option> </option>
 			<option value="1">Sim</option>
 			<option value="0">Não</option>
