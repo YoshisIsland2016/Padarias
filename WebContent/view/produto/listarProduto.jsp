@@ -10,6 +10,11 @@ $(document).ready(function(){
 		var categoriafk = $('#categoriafk').val();
 		var promocao = $('#promocao').val();
 		
+		if(promocao == '1')
+			promocao = true;
+		else
+			promocao = false;
+		
 		$.post("buscarProduto",{'nome_produto' : nome_produto, 'categoriafk' : categoriafk, 'promocao' : promocao},
 		function(dados) {
 			$('#tabelaListaProduto').html(dados);	
