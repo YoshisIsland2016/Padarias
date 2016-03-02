@@ -123,24 +123,21 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	public List<Produto> getBuscar(Produto produto_consulta){
+	public List<Produto> getBuscar(String nome_produto,int categoriafk, boolean promocao){
 		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? AND promocao = ?";
 		List<Produto> produtos = new ArrayList<Produto>();
 		
 		try{
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setString(1, "%"+produto_consulta.getNome_produto()+"%");			
-			stmt.setLong(2, produto_consulta.getCategoriafk().getId_categoria());
-			stmt.setBoolean(3, produto_consulta.isPromocao());
+			stmt.setString(1, "%"+nome_produto+"%");			
+			stmt.setLong(2, categoriafk);
+			stmt.setBoolean(3, promocao);
 			
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next()){
-				Produto produto = new Produto();
-				produto = montarObjeto(rs);
-				
-				produtos.add(produto);
+				produtos.add(montarObjeto(rs));
 			}
 			
 			rs.close();
