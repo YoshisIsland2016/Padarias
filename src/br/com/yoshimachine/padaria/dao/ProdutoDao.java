@@ -123,16 +123,73 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	public List<Produto> getBuscar(String nome_produto,int categoriafk, boolean promocao){
-		String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? AND promocao = ?";
-		List<Produto> produtos = new ArrayList<Produto>();
+	public List<Produto> getBuscar(String nome_produto,Integer categoriafk, Boolean promocao){
+		//String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categorifk = ? AND promocao = ?";
 		
 		try{
-			PreparedStatement stmt = con.prepareStatement(sql);
+			List<Produto> produtos = new ArrayList<Produto>();
+			PreparedStatement stmt = null;
 			
-			stmt.setString(1, "%"+nome_produto+"%");			
-			stmt.setLong(2, categoriafk);
-			stmt.setBoolean(3, promocao);
+			if(!nome_produto.equals("") && categoriafk == null && promocao == null)
+			{
+				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1, "%"+nome_produto+"%");
+			}
+			else if(!nome_produto.equals("") && categoriafk != null && promocao == null)
+			{
+				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1, "%"+nome_produto+"%");
+				stmt.setInt(2, categoriafk);				
+			}
+			else if(!nome_produto.equals("") && categoriafk != null && promocao != null)
+			{
+				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? AND promocao = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1, "%"+nome_produto+"%");
+				stmt.setInt(2, categoriafk);
+				stmt.setBoolean(3, promocao);
+			}
+			else if(nome_produto.equals("") && categoriafk != null && promocao == null)
+			{
+				String sql = "SELECT * FROM produtos WHERE categoriafk = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setInt(1,categoriafk);				
+			}
+			else if(nome_produto.equals("") && categoriafk != null && promocao != null)
+			{
+				String sql = "SELECT * FROM produtos WHERE categoriafk = ? AND promocao = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setInt(1, categoriafk);
+				stmt.setBoolean(2, promocao);
+			}
+			else if(nome_produto.equals("") && categoriafk == null && promocao != null)
+			{
+				String sql = "SELECT * FROM produtos WHERE promocao = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setBoolean(1, promocao);
+			}
+			else if(!nome_produto.equals("") && categoriafk == null && promocao != null)
+			{
+				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND promocao = ? ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1, "%"+nome_produto+"%");
+				stmt.setBoolean(2, promocao);				
+			}
+			else
+			{
+				String sql = "SELECT * FROM produtos ORDER BY categoriafk";
+				
+				stmt = con.prepareStatement(sql);
+			}
 			
 			ResultSet rs = stmt.executeQuery();
 			

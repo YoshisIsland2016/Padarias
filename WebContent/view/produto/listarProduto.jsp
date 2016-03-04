@@ -17,10 +17,9 @@ $(document).ready(function(){
 		
 		$.post("buscarProduto",{'nome_produto' : nome_produto, 'categoriafk' : categoriafk, 'promocao' : promocao},
 		function(dados) {
-			$('#tabelaListaProduto').html(dados);	
+			$('#tabela').html(dados);
 		});
-		
-	}
+	};
 	$("#nome_produto").keyup(function(){
 		evento();
 	});
@@ -39,7 +38,7 @@ $(document).ready(function(){
 <body>
 	<c:import url="/view/comum/menu.jsp" />
 	<p></p>
-	<form action="buscarProduto" >
+	
 		<h3>Buscar Produto:</h3><br/>
 		Nome:
 		<input type="text" id="nome_produto" name="nome_produto"/>
@@ -60,17 +59,16 @@ $(document).ready(function(){
 			<option value="0">Não</option>
 		</select>
 		<br/>
-		<input type="submit" value="Buscar"/>
-	</form>
-	<table>
+
+
+	<table id="tabela">
 		<tr>
 		<th>Id</th>
 		<th>Nome</th>
 		<th>Categoria</th>
 		<th>Preco</th>
 		<th>Promocao</th>
-		<th>Imagem</th>
-		<th>Descricao</th>
+		<th>Imagem</th>		
 		<th>Editar</th>
 		<th>Remover</th>
 		</tr>
@@ -91,7 +89,6 @@ $(document).ready(function(){
 			</c:choose>
 			</td>
 			<td>${produto.imagem}</td>
-			<td>${produto.descricao }</td>
 			<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>

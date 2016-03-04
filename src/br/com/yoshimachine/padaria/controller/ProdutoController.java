@@ -22,7 +22,6 @@ import br.com.yoshimachine.padaria.util.Util;
 public class ProdutoController {
 	
 	@RequestMapping("exibirSalvarProduto")
-	
 	public String exibirSalvarProduto(Model model)
 	{		
 		CategoriaDao dao = new CategoriaDao();
@@ -33,7 +32,6 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("salvarProduto")
-	
 	public String SalvarProduto(Produto produto,@RequestParam("file") MultipartFile imagem){
 		
 		if (Util.fazerUploadImagem(imagem)) {			
@@ -88,7 +86,7 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("buscarProduto")
-	public @ResponseBody String buscarProduto(@RequestParam String nome_produto,@RequestParam int categoriafk,@RequestParam boolean promocao,
+	public @ResponseBody String buscarProduto(@RequestParam String nome_produto,@RequestParam Integer categoriafk,@RequestParam Boolean promocao,
 			HttpServletResponse response){
 		
 		ProdutoDao dao = new ProdutoDao();
