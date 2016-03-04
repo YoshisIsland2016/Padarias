@@ -13,14 +13,14 @@ public class ContatoController {
 	@RequestMapping("exibirSalvarContato")
 	public String exibirSalvarContato()
 	{		
-		return "contato/exibirContato";
+		return "admin/contato/exibirContato";
 	}
 	@RequestMapping("salvarContato")
 	public String SalvarProduto(Contato contato){
 		
 		ContatoDao dao = new ContatoDao();
 		dao.getSalvar(contato);
-		return "contato/salvarContatoSucesso";
+		return "admin/contato/salvarContatoSucesso";
 	}
 	@RequestMapping("listarContato")
 	public String ListarProduto(Model model){
@@ -28,7 +28,7 @@ public class ContatoController {
 		
 		model.addAttribute("contatos",dao.getListar());
 		
-		return "contato/listarContato";
+		return "admin/contato/listarContato";
 	}
 	@RequestMapping("removerContato")
 	public String removerProduto(int id){
@@ -42,7 +42,7 @@ public class ContatoController {
 		ContatoDao dao = new ContatoDao();
 		model.addAttribute("contato",dao.buscaId(id));
 		
-		return "contato/mostrar";
+		return "admin/contato/mostrar";
 	}
 	@RequestMapping("alterarContato")
 	public String alterarProduto(Contato contato){

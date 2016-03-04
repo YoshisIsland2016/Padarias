@@ -13,14 +13,14 @@ public class CategoriaController {
 	@RequestMapping("exibirSalvarCategoria")
 	public String exibirSalvarCategoria()
 	{		
-		return "categoria/exibirCategoria";
+		return "admin/categoria/exibirCategoria";
 	}
 	@RequestMapping("salvarCategoria")
 	public String SalvarCategoria(Categoria categoria){
 		
 		CategoriaDao dao = new CategoriaDao();
 		dao.getSalvar(categoria);
-		return "categoria/salvarCategoriaSucesso";
+		return "admin/categoria/salvarCategoriaSucesso";
 	}
 	@RequestMapping("listarCategoria")
 	public String ListarCategoria(Model model){
@@ -28,7 +28,7 @@ public class CategoriaController {
 		
 		model.addAttribute("categorias",dao.getListar());
 		
-		return "categoria/listarCategoria";
+		return "admin/categoria/listarCategoria";
 	}
 	@RequestMapping("removerCategoria")
 	public String removerCategoria(int id){
@@ -42,7 +42,7 @@ public class CategoriaController {
 		CategoriaDao dao = new CategoriaDao();
 		model.addAttribute("categoria",dao.buscaId(id));
 		
-		return "categoria/mostrar";
+		return "admin/categoria/mostrar";
 	}
 	@RequestMapping("alterarCategoria")
 	public String alterarCategoria(Categoria categoria){

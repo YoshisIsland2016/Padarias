@@ -6,22 +6,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="/view/comum/menu.jsp" />
-	<hr><h3>Cadastrar Contatos</h3><hr>
-	<form action="salvarContato" method="post">
-		<p>
-		Email: <br />
-		<input type="text" name="email" />
-		</p>
+	<c:import url="/view/admin/comum/menu.jsp" />
+	<hr><h3>Cadastrar Categoria</h3><hr>
+	<form action="salvarCategoria" method="post">
 		<p>
 		Nome: <br />
-		<input type="text" name="nome" />
+		<input type="text" name="nome_categoria" />
 		</p>
 		<p>
-		Mensagem: <br/>
-		<textarea rows="10" cols="30" name="mensagem"></textarea>		 
+		Descricao: <br />
+		<input type="text" name="descricao" />
 		</p>
-		<p> <input type="submit" value="Cadastrar"></p>
+		<p>		
+		<p> <input type="submit" value="Cadastrar"> </p>
 	</form>
 </body>
 </html>

@@ -4,27 +4,25 @@
 <head>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listando Contatos</title>
+<title>Listando Categorias</title>
 </head>
 <body>
-	<c:import url="/view/comum/menu.jsp" />
+	<c:import url="/view/admin/comum/menu.jsp" />
 	<table>
 		<tr>
 		<th>Id</th>
-		<th>Email</th>
 		<th>Nome</th>
-		<th>Mensagem</th>
+		<th>Descricao</th>		
 		<th>Editar</th>
 		<th>Remover</th>
 		</tr>
-		<c:forEach items="${contatos}" var="contato">
+		<c:forEach items="${categorias}" var="categoria">
 		<tr>
-			<td>${contato.id_contato}</td>
-			<td>${contato.email}</td>
-			<td>${contato.nome}</td>
-			<td>${contato.mensagem }</td>					
-			<td><a href="#" onclick="remover(${contato.id_contato},'Contato')">Remover</a></td>
-			<td><a href="mostrarContato?id=${contato.id_contato}">Editar</a></td>
+			<td>${categoria.id_categoria}</td>
+			<td>${categoria.nome_categoria}</td>
+			<td>${categoria.descricao}</td>					
+			<td><a href="#" onclick="remover(${categoria.id_categoria},'Categoria')">Remover</a></td>
+			<td><a href="mostrarCategoria?id=${categoria.id_categoria}">Editar</a></td>
 		</tr>
 		</c:forEach>
 	</table>

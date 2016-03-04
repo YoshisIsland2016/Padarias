@@ -6,7 +6,7 @@
 <title>Salvar Produto</title>
 </head>
 <body>
-	<c:import url="/view/comum/menu.jsp" />
+	<c:import url="/view/admin/comum/menu.jsp" />
 	<hr><h3>Cadastrar Produto</h3><hr>
 	<form action="salvarProduto" method="post" enctype="multipart/form-data">
 		<p>

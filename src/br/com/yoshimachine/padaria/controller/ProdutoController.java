@@ -28,7 +28,7 @@ public class ProdutoController {
 		List<Categoria> listaCategoriaProduto = dao.getListar();
 		model.addAttribute("listaCategoriaProduto", listaCategoriaProduto);
 		
-		return "produto/exibirProduto";
+		return "admin/produto/exibirProduto";
 	}
 	
 	@RequestMapping("salvarProduto")
@@ -41,7 +41,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		dao.getSalvar(produto);		
 		
-		return "produto/salvarProdutoSucesso";
+		return "admin/produto/salvarProdutoSucesso";
 	}
 	
 	@RequestMapping("listarProduto")
@@ -54,7 +54,7 @@ public class ProdutoController {
 		
 		model.addAttribute("produtos",dao.getListar());
 		
-		return "produto/listarProduto";
+		return "admin/produto/listarProduto";
 	}
 	
 	@RequestMapping("removerProduto")
@@ -74,7 +74,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		model.addAttribute("produto",dao.buscaId(id));
 		
-		return "produto/mostrar";
+		return "admin/produto/mostrar";
 	}
 	
 	@RequestMapping("alterarProduto")
@@ -96,12 +96,12 @@ public class ProdutoController {
 		StringBuilder st = new StringBuilder();
 		
 		st.append("<tr style='background-color: #E6E6E6; font-weight: bold;'>");
-		st.append("<td> ID </td>");
-		st.append("<td> NOME </td>");
-		st.append("<td> CATEGORIA </td>");
-		st.append("<td> PRECO </td>");
-		st.append("<td> PROMOCAO </td>");
-		st.append("<td> IMAGEM </td>");
+		st.append("<th> ID </th>");
+		st.append("<th> NOME </th>");
+		st.append("<th> CATEGORIA </th>");
+		st.append("<th> PRECO </th>");
+		st.append("<th> PROMOCAO </th>");
+		st.append("<th> IMAGEM </th>");
 		st.append("</tr>");
 		
 		for(Produto produto : listaProduto){
@@ -118,9 +118,16 @@ public class ProdutoController {
 			
 			st.append("<td>"+produto.getImagem()+"</td>");			
 			st.append("</tr");
+			
 		}
 		
 		response.setStatus(200);
 		return st.toString();
+	}	
+	
+	@RequestMapping("/teste")
+	public String exibirPagina(){
+		
+		return "admin/index";
 	}
 }

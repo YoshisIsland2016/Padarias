@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="/view/comum/menu.jsp" />
+	<c:import url="/view/admin/comum/menu.jsp" />
 	<h3>Alterar tarefa - ${categoria.id_categoria}</h3>
 	<form action="alterarCategoria" method="post">
 		<input type="hidden" name="id_categoria" value="${categoria.id_categoria}" />

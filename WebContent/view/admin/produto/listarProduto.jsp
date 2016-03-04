@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
+<script src="<c:url value="/resources/jquery-2.1.4.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -36,7 +37,7 @@ $(document).ready(function(){
 <title>Listando Produtos</title>
 </head>
 <body>
-	<c:import url="/view/comum/menu.jsp" />
+	<c:import url="/view/admin/comum/menu.jsp" />
 	<p></p>
 	
 		<h3>Buscar Produto:</h3><br/>
@@ -46,7 +47,7 @@ $(document).ready(function(){
 		
 			Categoria: 
 			<select id="categoriafk" name="categoriafk" >
-				<option value=""> Selecione </option>
+				<option> </option>
 				<c:forEach items="${listaCategoriaProduto}" var="obj">
 					<option value="${obj.id_categoria}"> ${obj.nome_categoria} </option>
 				</c:forEach>

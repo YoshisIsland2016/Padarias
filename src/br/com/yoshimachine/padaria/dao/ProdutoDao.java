@@ -130,14 +130,14 @@ public class ProdutoDao {
 			List<Produto> produtos = new ArrayList<Produto>();
 			PreparedStatement stmt = null;
 			
-			if(!nome_produto.equals("") && categoriafk == null && promocao == null)
+			if(!nome_produto.equals(""))
 			{
 				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? ORDER BY categoriafk";
 				
 				stmt = con.prepareStatement(sql);
 				stmt.setString(1, "%"+nome_produto+"%");
 			}
-			else if(!nome_produto.equals("") && categoriafk != null && promocao == null)
+			else if(!nome_produto.equals("") && categoriafk != null)
 			{
 				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? ORDER BY categoriafk";
 				
@@ -154,37 +154,21 @@ public class ProdutoDao {
 				stmt.setInt(2, categoriafk);
 				stmt.setBoolean(3, promocao);
 			}
-			else if(nome_produto.equals("") && categoriafk != null && promocao == null)
+			else if(categoriafk != null)
 			{
 				String sql = "SELECT * FROM produtos WHERE categoriafk = ? ORDER BY categoriafk";
 				
 				stmt = con.prepareStatement(sql);
 				stmt.setInt(1,categoriafk);				
 			}
-			else if(nome_produto.equals("") && categoriafk != null && promocao != null)
-			{
-				String sql = "SELECT * FROM produtos WHERE categoriafk = ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setInt(1, categoriafk);
-				stmt.setBoolean(2, promocao);
-			}
-			else if(nome_produto.equals("") && categoriafk == null && promocao != null)
+			else if(promocao != null)
 			{
 				String sql = "SELECT * FROM produtos WHERE promocao = ? ORDER BY categoriafk";
 				
 				stmt = con.prepareStatement(sql);
 				stmt.setBoolean(1, promocao);
 			}
-			else if(!nome_produto.equals("") && categoriafk == null && promocao != null)
-			{
-				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setString(1, "%"+nome_produto+"%");
-				stmt.setBoolean(2, promocao);				
-			}
-			else
+			else if(nome_produto.equals("") && categoriafk == null && promocao == null)
 			{
 				String sql = "SELECT * FROM produtos ORDER BY categoriafk";
 				
