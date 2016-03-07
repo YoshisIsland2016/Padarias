@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.yoshimachine.padaria.model.Administrador;
-import br.com.yoshimachine.padaria.model.Categoria;
 import br.com.yoshimachine.padaria.util.ConnectionFactory;
 
 public class AdministradorDao {
@@ -22,7 +21,7 @@ public class AdministradorDao {
 			throw new RuntimeException(e);
 		}
 	}
-	public Administrador buscarUsuario(Administrador usuario) {
+	public Administrador buscarAdministrador(Administrador usuario) {
 		try {
 			Administrador administradorConsultado = null;
 			PreparedStatement stmt = this.con.prepareStatement("select * from administrador where login = ? and senha = ?");
@@ -47,9 +46,9 @@ public class AdministradorDao {
         Administrador administrador = new Administrador();
        
         administrador.setId_administrador(rs.getInt("id_administrador"));
-        administrador.setNome_categoria(rs.getString("nome_categoria"));
-        categoria.setDescricao(rs.getString("descricao"));
+        administrador.setLogin(rs.getString("login"));
+        administrador.setSenha(rs.getString("senha"));
         
-        return categoria;
+        return administrador;
     }
 }

@@ -7,5 +7,9 @@
 </head>
 <body>
 	<c:import url="/view/admin/comum/menu.jsp" />
+	
+	<p>
+		Bem vindo, ${administradorLogado.login}
+	</p>
 </body>
 </html>
