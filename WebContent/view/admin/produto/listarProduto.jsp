@@ -57,7 +57,6 @@ $(document).ready(function(){
 		<select id="promocao" name="promocao">			
 			<option> </option>
 			<option value="1">Sim</option>
-			<option value="0">Não</option>
 		</select>
 		<br/>
 

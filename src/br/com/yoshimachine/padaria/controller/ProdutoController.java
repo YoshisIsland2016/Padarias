@@ -118,7 +118,7 @@ public class ProdutoController {
 			
 			st.append("<td>"+produto.getImagem()+"</td>");			
 			st.append("</tr");
-			
+			st.append("<br/>");
 		}
 		
 		response.setStatus(200);
