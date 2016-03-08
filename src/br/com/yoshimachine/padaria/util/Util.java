@@ -16,11 +16,13 @@ public class Util {
 			String nomeArquivo = imagem.getOriginalFilename();
 		try {
 			// Criando o diretório para armazenar o arquivo
-			String workspaceProjeto = "/home/ifpe/git/Padarias/";
+			String workspaceProjeto = "/home/ifpe/git/Padarias";
 			File dir = new File(workspaceProjeto + "/WebContent/view/img");
+			
 			if (!dir.exists()) {
 				dir.mkdirs();
-		}
+			}
+			
 			// Criando o arquivo no diretório
 			File serverFile = new File(dir.getAbsolutePath() + File.separator + Calendar.getInstance().getTime() + " - " + nomeArquivo);
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));

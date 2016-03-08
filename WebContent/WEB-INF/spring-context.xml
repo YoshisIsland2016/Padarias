@@ -13,15 +13,13 @@
 	<context:component-scan base-package="br.com.yoshimachine.padaria" />
 	<mvc:annotation-driven conversion-service="conversionService" />
 	
+	<!-- Para suportar CSS e JS -->
+	<mvc:default-servlet-handler/>
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<!-- Para suportar CSS e JS -->
-	<mvc:default-servlet-handler/>
-	
-	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="999999999999999" />
@@ -34,5 +32,9 @@
 			</list>
 		</property>
 	</bean>
-
+	
+	<mvc:interceptors>
+		<bean class="br.com.yoshimachine.padaria.util.AutorizadorInterceptor" />
+	</mvc:interceptors>
+	
 </beans>

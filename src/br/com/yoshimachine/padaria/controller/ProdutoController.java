@@ -102,6 +102,7 @@ public class ProdutoController {
 		st.append("<th> PRECO </th>");
 		st.append("<th> PROMOCAO </th>");
 		st.append("<th> IMAGEM </th>");
+		st.append("<th> REMOVER	ALTERAR </th>");
 		st.append("</tr>");
 		
 		for(Produto produto : listaProduto){
@@ -109,14 +110,18 @@ public class ProdutoController {
 			st.append("<td>"+produto.getId_produto()+"</td>");
 			st.append("<td>"+produto.getNome_produto()+"</td>");
 			st.append("<td>"+produto.getCategoriafk().getNome_categoria());
-			st.append("<td>"+produto.getPreco()+"</td>");
+			st.append("<td>R$ "+produto.getPreco()+"</td>");
 			
 			if(produto.isPromocao())
 				st.append("<td>SIM</td>");
 			else
 				st.append("<td>NÃO</td>");
 			
-			st.append("<td>"+produto.getImagem()+"</td>");			
+			st.append("<td>"+produto.getImagem()+"</td>");
+			st.append("<td>");
+			st.append("<a href='#' onclick='remover("+produto.getId_produto()+",'Produto')'>Remover</a>");
+			st.append("<a href='mostrarProduto?id=" + produto.getId_produto() + "'>Editar</a> &nbsp;");
+			st.append("</td>");
 			st.append("</tr");
 			st.append("<br/>");
 		}

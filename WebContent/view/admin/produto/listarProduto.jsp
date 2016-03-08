@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
-<script src="<c:url value="/resources/jquery-2.1.4.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/padaria.js" />"></script>
+<script src="resources/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="resources/padaria.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	function evento(){
@@ -61,8 +61,8 @@ $(document).ready(function(){
 		<br/>
 
 
-	<table id="tabela">
-		<tr>
+	<table id="tabela" style="background-color:#1C9DDF;">
+		<tr style="background-color: #E6E6E6; font-weight: bold;">
 		<th>Id</th>
 		<th>Nome</th>
 		<th>Categoria</th>
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			<td>${produto.id_produto}</td>
 			<td>${produto.nome_produto}</td>
 			<td>${produto.categoriafk.nome_categoria}</td>	
-			<td>${produto.preco}</td>
+			<td>R$ ${produto.preco}</td>
 			<td>
 			<c:choose>
 				<c:when test="${produto.promocao}">
@@ -88,7 +88,7 @@ $(document).ready(function(){
 				</c:otherwise>
 			</c:choose>
 			</td>
-			<td>${produto.imagem}</td>
+			<td><img src="view/img/${produto.imagem }" /></td>
 			<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
 			<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 		</tr>

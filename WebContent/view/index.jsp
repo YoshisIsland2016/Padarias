@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,12 @@
 	<meta name="description" content="Padaria Santa Maria" />
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Padaria Santa Maria</title>
-	<link rel="stylesheet" href="<c:url value="css/bootstrap.css" />">
-	<link rel="stylesheet" href="<c:url value="css/bootstrap-responsive.css" />">
-	<link rel="stylesheet" href="<c:url value="css/style.css" />">		
-	<script src="<c:url value="js/jquery-1.11.3.min" />"></script>
-	<script src="<c:url value="js/bootstrap.min.js" />"></script>
+	<link rel="stylesheet" href="view/css/bootstrap.css">
+	<link rel="stylesheet" href="view/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="view/css/style.css">		
+	<script src="view/js/jquery-1.11.3.min"></script>
+	<script src="view/js/bootstrap.js"></script>
+	<script src="view/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- Container de DIVS-->
@@ -32,23 +34,23 @@
 				<!-- DIV de PROMOCOES -->
 				<div class="span2">
 					<div class="promocao">
-						<img src="img/slides/2.jpg" alt="">
+						<img src="view/img/slides/2.jpg" alt="">
 						PROMOCAO DA DIA
 					</div>
 					<div class="promocao">
-						<img src="img/slides/3.jpg" alt="">
+						<img src="view/img/slides/3.jpg" alt="">
 						PROMOCAO DA DIA
 					</div>
 					<div class="promocao">
-						<img src="img/slides/4.jpg" alt="">
+						<img src="view/img/slides/4.jpg" alt="">
 						PROMOCAO DA DIA
 					</div>
 					<div class="promocao">
-						<img src="img/slides/4.jpg" alt="">
+						<img src="view/img/slides/4.jpg" alt="">
 						PROMOCAO DA DIA
 					</div>
 					<div class="promocao">
-						<img src="img/slides/4.jpg" alt="">
+						<img src="view/img/slides/4.jpg" alt="">
 						PROMOCAO DA DIA
 					</div>
 				</div>
