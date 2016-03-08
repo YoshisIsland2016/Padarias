@@ -1,0 +1,56 @@
+*{
+	border:0;
+	margin:0;
+}
+body{
+	background-color:#2D0808;
+}
+#topo{
+	background-color:#E0CCCC;
+	padding:15px;
+	border: #050202 2px solid;
+	border-radius: 5px;
+	text-align: center;
+}
+#topo a{
+	padding-right: 20px;
+	font-size:1.7vw;
+	color:#523E3E;
+}
+#logo img{
+	width:50%;
+	z-index: 50;
+}
+#slideshow img{
+	height:60vh;
+	width:100vw;
+}
+.promocao{
+	height:100%;
+	width:100%;
+	background-color: #E0CCCC;
+	border:#050202 2px solid;
+	margin-top:10%;
+	border-radius: 10px;
+	text-align: center;
+	font-size:16px;
+	color:#1F0101;
+	font-weight: bold;
+}
+.promocao img{
+	padding:5%;
+	height: 10vh;
+	width: 12vw;
+	border: #2F040B 2px dashed;
+}
+#corpo{
+	background-color:#E0CCCC;
+	border: #050202 2px solid;
+	border-radius: 5px;
+	padding:1%;
+	font-size: 18px;
+	color:#1F0101;
+}
+#corpo h2{
+	text-align: center;
+}
