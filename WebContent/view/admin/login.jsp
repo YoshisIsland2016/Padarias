@@ -11,7 +11,7 @@
 	</p>
 	<div style="color: red;" align="center"> <h3> ${msg} </h3> </div>
 		
-	<form action="../efetuarLogin" method="post">
+	<form action="efetuarLogin" method="post">
 		Login: <br />
 		<input type="text" name="login" required="required" />
 		<br /> <br />

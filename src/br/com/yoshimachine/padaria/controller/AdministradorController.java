@@ -12,7 +12,12 @@ import br.com.yoshimachine.padaria.model.Administrador;
 @Controller
 public class AdministradorController {
 	
-	@RequestMapping("/efetuarLogin")
+	@RequestMapping("exibirLogin")
+	public String exibirLogin(){
+		
+		return "admin/login";
+	}
+	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Administrador administrador, HttpSession session,Model model)
 	{
 		AdministradorDao dao = new AdministradorDao();

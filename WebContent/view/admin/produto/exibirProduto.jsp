@@ -35,6 +35,7 @@
 		<p>
 			Imagem: <br />
 			<input type="file" name="file" />
+			<input type="hidden" name="imagem" />
 		</p>
 		<p>
 			<textarea rows="10" cols="30" name="descricao"></textarea>

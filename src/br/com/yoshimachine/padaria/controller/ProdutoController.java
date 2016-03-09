@@ -102,7 +102,8 @@ public class ProdutoController {
 		st.append("<th> PRECO </th>");
 		st.append("<th> PROMOCAO </th>");
 		st.append("<th> IMAGEM </th>");
-		st.append("<th> REMOVER	ALTERAR </th>");
+		st.append("<th> REMOVER </th>");
+		st.append("<th> ALTERAR </th>");
 		st.append("</tr>");
 		
 		for(Produto produto : listaProduto){
@@ -115,13 +116,13 @@ public class ProdutoController {
 			if(produto.isPromocao())
 				st.append("<td>SIM</td>");
 			else
-				st.append("<td>NÃO</td>");
+				st.append("<td>NAO</td>");
 			
-			st.append("<td>"+produto.getImagem()+"</td>");
-			st.append("<td>");
-			st.append("<a href='#' onclick='remover("+produto.getId_produto()+",'Produto')'>Remover</a>");
-			st.append("<a href='mostrarProduto?id=" + produto.getId_produto() + "'>Editar</a> &nbsp;");
-			st.append("</td>");
+			st.append("<td>"+produto.getImagem()+"</td>");			
+			//String opcao = "Produto";
+			//st.append("<a href='#' onclick='remover("+produto.getId_produto()+","+opcao+")'>Remover</a>");
+			st.append("<td><a href='#' onclick='remover(1,'Produto')'>Remover</a></td>");
+			st.append("<td><a href='mostrarProduto?id=" + produto.getId_produto() + "'>Editar</a></td>");
 			st.append("</tr");
 			st.append("<br/>");
 		}
@@ -130,7 +131,7 @@ public class ProdutoController {
 		return st.toString();
 	}	
 	
-	@RequestMapping("/teste")
+	@RequestMapping("/australoptecos")
 	public String exibirPagina(){
 		
 		return "admin/index";

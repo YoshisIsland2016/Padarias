@@ -1,14 +1,10 @@
 package br.com.yoshimachine.padaria.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.yoshimachine.padaria.dao.AdministradorDao;
 import br.com.yoshimachine.padaria.dao.CategoriaDao;
-import br.com.yoshimachine.padaria.model.Administrador;
 import br.com.yoshimachine.padaria.model.Categoria;
 
 @Controller
