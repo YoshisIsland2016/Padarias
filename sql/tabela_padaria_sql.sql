@@ -20,7 +20,7 @@ CREATE TABLE administrador(
 CREATE TABLE categorias(
 	
     id_categoria INT PRIMARY KEY AUTO_INCREMENT,
-	nome_categoria VARCHAR(50) NOT NULL UNIQUE,
+	nome_categoria VARCHAR(50) NOT NULL,
 	descricao VARCHAR(50) NOT NULL
 	);
 
