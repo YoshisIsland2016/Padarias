@@ -24,8 +24,7 @@
 					<a href="">Inicio</a>
 					<a href="">Produtos</a>
 					<a href="">Quem somos</a>
-					<a href="">Fale Conosco</a>
-					<a href="exibirLogin">Administracao</a>
+					<a href="">Fale Conosco</a>				
 				</div>
 			</div>
 			<!-- FIM DA DIV para Menu -->

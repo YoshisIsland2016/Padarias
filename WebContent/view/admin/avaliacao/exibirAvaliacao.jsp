@@ -17,15 +17,15 @@
 		Nome: <br />
 		<input type="text" name="email" />
 		</p>
-		
+		Nota:		
 		<p>
-		<select name="nota">
-			<option value="0"></option>
-			<option value="1"></option>
-			<option value="2"></option>
-			<option value="3"></option>
-			<option value="4"></option>
-			<option value="5"></option>			
+		<select name="nota">			
+			<option> </option>
+			<option value="1">Muito Ruim</option>
+			<option value="2">Ruim</option>
+			<option value="3">Bom</option>
+			<option value="4">Ótimo</option>
+			<option value="5">Excelente</option>
 		</select>
 		</p>
 		<input type="hidden" name="permissao" value="0" />

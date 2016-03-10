@@ -10,11 +10,21 @@
 	<c:import url="/view/comum/menu.jsp" />
 	<h3>Alterar Contato - ${contato.id_contato}</h3>
 	<form action="alterarContato" method="post">
-		<input type="hidden" name="id_contato" value="${contato.id_contato}" />
-		Email:<br />		
-		<input type="text" name="email" value="${contato.email}"/>
-		<br />Nome:<br />
-		<input type="text" name="nome" value="${contato.nome}"/>
+		<input type="hidden" name="id_avaliacao" value="${avaliacao.id_avaliacao}" />
+		Nome:<br />		
+		<input type="text" name="email" value="${avaliacao.nome}"/>
+		<br />Email:<br />
+		<input type="text" name="nome" value="${avaliacao.email}"/>
+		<br />Nota:<br />
+		<select name="promocao">			
+			<option> </option>
+			<option value="1">Muito Ruim</option>
+			<option value="2">Ruim</option>
+			<option value="3">Bom</option>
+			<option value="4">Ótimo</option>
+			<option value="5">Excelente</option>
+		</select>
+		<br />Permitido<br />
 		
 		<input type="submit" value="Alterar"/>
 	</form>

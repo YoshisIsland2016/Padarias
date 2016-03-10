@@ -13,8 +13,8 @@
 		<th>Id</th>
 		<th>Email</th>
 		<th>Nome</th>
-		<th>Editar</th>
 		<th>Remover</th>
+		<th>Visualizar</th>
 		</tr>
 		<c:forEach items="${contatos}" var="contato">
 		<tr>
