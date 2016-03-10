@@ -1,16 +1,16 @@
 package br.com.teste.yoshisisland.padaria;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.com.yoshimachine.padaria.dao.ContatoDao;
 import br.com.yoshimachine.padaria.model.Contato;
 
-@FixMethodOrder
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TesteContatos {
 	@Test
 	public void testeInserirContato() throws SQLException {
