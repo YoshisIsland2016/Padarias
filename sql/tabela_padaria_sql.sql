@@ -47,4 +47,4 @@ CREATE TABLE avaliacao(
 	FOREIGN KEY(produtoid) REFERENCES produtos(id_produto)
 	);
 
-INSERT INTO administrador(login,senha) VALUES('admin',sha1('admin'));
+INSERT INTO administrador(login,senha) VALUES('admin',sha1('xxx'));
