@@ -5,7 +5,7 @@ USE padaria;
 CREATE TABLE contatos(
 
     id_contato INT PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(70) NOT NULL UNIQUE,
+    email VARCHAR(70) NOT NULL,
 	nome VARCHAR(30) NOT NULL,
 	mensagem VARCHAR(20000) NOT NULL
 	);

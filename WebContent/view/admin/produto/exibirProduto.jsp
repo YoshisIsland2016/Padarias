@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,11 +11,11 @@
 	<form action="salvarProduto" method="post" enctype="multipart/form-data">
 		<p>
 			Nome: <br />
-			<input type="text" name="nome_produto" />
+			<input type="text" required="required" name="nome_produto" />
 		</p>
 		<p>
 			Categoria: <br />
-			<select name="categoriafk" >
+			<select name="categoriafk" required="required">
 				<option value=""> Selecione </option>
 				<c:forEach items="${listaCategoriaProduto}" var="obj">
 					<option value="${obj.id_categoria}"> ${obj.nome_categoria} </option>
@@ -23,8 +23,8 @@
 			</select>
 		</p>
 		<p>
-			Preco: <br />
-			<input type="text" name="preco" />
+			Preco(R$): <br />
+			<input type="tel" required="required" maxlength="15" name="valor" pattern="[0-9]+$" />
 		</p>
 		Promocao: <br/>
 		<select name="promocao">			
