@@ -16,11 +16,13 @@ public class CategoriaController {
 		return "admin/categoria/exibirCategoria";
 	}
 	@RequestMapping("salvarCategoria")
-	public String SalvarCategoria(Categoria categoria){
+	public String SalvarCategoria(Categoria categoria,Model model){
 		
 		CategoriaDao dao = new CategoriaDao();
 		dao.getSalvar(categoria);
-		return "admin/categoria/salvarCategoriaSucesso";
+		model.addAttribute("msg","Item Salvo com Sucesso!");
+		
+		return "forward:listarCategoria";
 	}
 	@RequestMapping("listarCategoria")
 	public String ListarCategoria(Model model){
@@ -35,7 +37,7 @@ public class CategoriaController {
 		CategoriaDao dao = new CategoriaDao();
 		dao.getRemover(id);
 		
-		return "redirect:listarCategoria"; 
+		return "forward:listarCategoria"; 
 	}
 	@RequestMapping("mostrarCategoria")
 	public String mostrarCategoria(int id,Model model){
@@ -49,7 +51,7 @@ public class CategoriaController {
 		CategoriaDao dao = new CategoriaDao();
 		dao.getAlterar(categoria);
 		
-		return "redirect:listarCategoria";
+		return "forward:listarCategoria";
 	}
 	
 }

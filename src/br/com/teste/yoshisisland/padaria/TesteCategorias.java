@@ -1,8 +1,5 @@
 package br.com.teste.yoshisisland.padaria;
 
-
-
-
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -32,7 +32,7 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("salvarProduto")
-	public String SalvarProduto(Produto produto,@RequestParam("file") MultipartFile imagem){
+	public String SalvarProduto(Produto produto,@RequestParam("file") MultipartFile imagem,Model model){
 		
 		if (Util.fazerUploadImagem(imagem)) {			
 			produto.setImagem(Calendar.getInstance().getTime() + "_" + imagem.getOriginalFilename());
@@ -40,8 +40,9 @@ public class ProdutoController {
 		
 		ProdutoDao dao = new ProdutoDao();
 		dao.getSalvar(produto);		
+		model.addAttribute("msg","Produto Salvo com sucesso!");
 		
-		return "admin/produto/salvarProdutoSucesso";
+		return "forward:listarProduto";
 	}
 	
 	@RequestMapping("listarProduto")

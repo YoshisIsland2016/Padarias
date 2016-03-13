@@ -26,10 +26,16 @@ public class AdministradorController {
 		if(administradorLogado != null)
 		{
 			session.setAttribute("administradorLogado", administradorLogado);
-			return "admin/index";
+			//return "admin/index";
+			return "forward:exibirIndex";
 		}
 		model.addAttribute("msg", "Não foi encontrado um usuário com o login esenha informados.");
 		
 		return "index";
+	}
+	@RequestMapping("exibirIndex")
+	public String exibirIndex()
+	{
+		return "admin/index";
 	}
 }

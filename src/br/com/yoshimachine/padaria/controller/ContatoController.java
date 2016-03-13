@@ -35,7 +35,7 @@ public class ContatoController {
 		ContatoDao dao = new ContatoDao();
 		dao.getRemover(id);
 		
-		return "redirect:listarContato"; 
+		return "forward:listarContato"; 
 	}
 	@RequestMapping("mostrarContato")
 	public String mostrarProduto(int id,Model model){
@@ -49,6 +49,6 @@ public class ContatoController {
 		ContatoDao dao = new ContatoDao();
 		dao.getAlterar(contato);
 		
-		return "redirect:listarContato";
+		return "forward:listarContato";
 	}
 }
