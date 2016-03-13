@@ -104,7 +104,6 @@
 					<th>Id</th>
 					<th>Email</th>
 					<th>Nome</th>
-					<th>Remover</th>
 					<th>Visualizar</th>
 					</tr>
 					<c:forEach items="${contatos}" var="contato">
@@ -112,8 +111,7 @@
 						<td>${contato.id_contato}</td>
 						<td>${contato.email}</td>
 						<td>${contato.nome}</td>					
-						<td><a href="#" onclick="remover(${contato.id_contato},'Contato')">Remover</a></td>
-						<td><a href="mostrarContato?id=${contato.id_contato}">Editar</a></td>
+						<td><a href="mostrarContato?id=${contato.id_contato}"><div style="text-align:center"><i class="glyphicons-icon picture"></i></div></a></td>
 					</tr>
 					</c:forEach>
 				</table>

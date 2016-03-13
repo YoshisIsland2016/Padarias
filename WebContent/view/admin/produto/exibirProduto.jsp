@@ -97,7 +97,7 @@
           </ul>
           <div class="row-fluid">
             <div class="clearfix">
-            	<hr><h3>Cadastrar Categoria</h3><hr>
+            	<hr><h3>Cadastrar Produto</h3><hr>
 				<form action="salvarProduto" method="post" enctype="multipart/form-data">
 					<p>
 						Nome: <br />
@@ -131,7 +131,7 @@
 						<textarea rows="10" cols="30" name="descricao"></textarea>
 					</p>
 					<p> 
-						<input type="submit" value="Cadastrar">
+						<button type="submit" class="btn btn-primary" >Cadastrar</button>
 					</p>
 				</form>		
             </div>

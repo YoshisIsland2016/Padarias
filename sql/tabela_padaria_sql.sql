@@ -41,7 +41,7 @@ CREATE TABLE avaliacao(
 	produtoid INT NOT NULL,
 	nome VARCHAR(100) NOT NULL,
 	email VARCHAR(100) NOT NULL,
-	nota VARCHAR(100) NOT NULL,
+	nota INT NOT NULL,
 	permissao BOOLEAN NOT NULL,
 	mensagem VARCHAR(2000) NOT NULL,
 	FOREIGN KEY(produtoid) REFERENCES produtos(id_produto)
