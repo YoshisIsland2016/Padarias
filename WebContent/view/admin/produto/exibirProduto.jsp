@@ -185,5 +185,4 @@
     <script src="view/admin/js/custom.js"></script>
     <!-- end: JavaScript-->
   
-
 </body></html>
