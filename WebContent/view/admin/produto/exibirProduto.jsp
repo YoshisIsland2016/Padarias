@@ -114,7 +114,7 @@
 					</p>
 					<p>
 						Preco(R$): <br />
-						<input type="tel" required="required" maxlength="15" name="valor" pattern="[0-9]+$" />
+						<input type="text" required="required" maxlength="15" name="preco" pattern="[0-9]+$" />
 					</p>
 					Promocao: <br/>
 					<select name="promocao">			
