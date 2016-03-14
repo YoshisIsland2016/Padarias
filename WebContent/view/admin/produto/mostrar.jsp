@@ -134,7 +134,7 @@
 						Imagem: <br />
 						<img src="/view/produto/img/${produto.imagem}" />
 					</p>
-					<input type="hidden" name="imagem" value="${produto.imagem}"/>
+						<input type="hidden" name="imagem" value="${produto.imagem}"/>
 					<p>
 						<textarea rows="10" cols="30" name="descricao">${produto.descricao }</textarea>
 					</p>
@@ -194,4 +194,5 @@
     <!-- end: JavaScript-->
   
 
-</body></html>
+</body>
+</html>
