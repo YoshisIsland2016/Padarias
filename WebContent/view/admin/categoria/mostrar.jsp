@@ -104,7 +104,7 @@
 					<input type="text" name="nome_categoria" value="${categoria.nome_categoria}"/>
 					<br />Descricao:<br />
 					<input type="text" name="descricao" value="${categoria.descricao }"/><br />
-					<input type="submit" value="Alterar"/>
+					<button type="submit" class="btn btn-success" >Alterar</button>
 				</form>			
             </div>
           </div>

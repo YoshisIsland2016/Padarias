@@ -29,9 +29,9 @@ public class AdministradorController {
 			//return "admin/index";
 			return "forward:exibirIndex";
 		}
-		model.addAttribute("msg", "Não foi encontrado um usuário com o login esenha informados.");
+		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
 		
-		return "index";
+		return "forward:exibirLogin";
 	}
 	@RequestMapping("exibirIndex")
 	public String exibirIndex()

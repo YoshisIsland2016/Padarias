@@ -26,7 +26,7 @@
 		</select>
 		<br />Permitido<br />
 		
-		<input type="submit" value="Alterar"/>
+		<button type="submit" ></button>
 	</form>
 </body>
 </html>

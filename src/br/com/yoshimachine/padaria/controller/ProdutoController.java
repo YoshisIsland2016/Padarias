@@ -119,10 +119,10 @@ public class ProdutoController {
 			else
 				st.append("<td>NAO</td>");
 			
-			st.append("<td>"+produto.getImagem()+"</td>");			
-			//String opcao = "Produto";
-			//st.append("<a href='#' onclick='remover("+produto.getId_produto()+","+opcao+")'>Remover</a>");
-			st.append("<td><a href='#' onclick='remover(1,'Produto')'>Remover</a></td>");
+			st.append("<td><img style='width:10vw;height:12vh;' src='view/img/"+produto.getImagem()+"' /></td>");			
+			//String opcao = "Produto";			
+			//st.append("<td><a href='#' onclick='remover(1,'Produto')'>Remover</a></td>");
+			st.append("<td><a href='removerProduto?id="+produto.getId_produto()+"'>Remover</a></td>");
 			st.append("<td><a href='mostrarProduto?id=" + produto.getId_produto() + "'>Editar</a></td>");
 			st.append("</tr");
 			st.append("<br/>");

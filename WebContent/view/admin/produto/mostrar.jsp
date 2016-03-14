@@ -139,7 +139,7 @@
 						<textarea rows="10" cols="30" name="descricao">${produto.descricao }</textarea>
 					</p>
 					<p> 
-						<input type="submit" value="Alterar">
+						<button type="submit" class="btn btn-success" >Alterar</button>
 					</p>		
 				</form>		
             </div>
