@@ -35,7 +35,7 @@ public class ProdutoController {
 	public String SalvarProduto(Produto produto,@RequestParam("file") MultipartFile imagem,Model model){
 		
 		if (Util.fazerUploadImagem(imagem)) {			
-			produto.setImagem(Calendar.getInstance().getTime() + "_" + imagem.getOriginalFilename());
+			produto.setImagem(imagem.getOriginalFilename());
 		}
 		
 		ProdutoDao dao = new ProdutoDao();
