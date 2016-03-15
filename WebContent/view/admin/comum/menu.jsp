@@ -31,16 +31,7 @@
               </li>
               <li>
                 <a href="listarAvaliacao"><i class="icon-list-alt"></i><span class="hidden-tablet"> Avaliações</span></a>
-              </li>
-              <li>
-                <a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a>
-              </li>
-              <li>
-                <a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a>
-              </li>
-              <li>
-                <a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a>
-              </li>
+              </li>              
             </ul>
           </div>
         </div>

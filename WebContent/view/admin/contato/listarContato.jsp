@@ -63,7 +63,7 @@
                     <a href="#"><i class="halflings-icon user"></i> Perfil</a>
                   </li>
                   <li>
-                    <a href="login.html"><i class="halflings-icon off"></i> Logout</a>
+                    <a href="logout"><i class="halflings-icon off"></i> Logout</a>
                   </li>
                 </ul>
               </li>
@@ -111,7 +111,9 @@
 						<td>${contato.id_contato}</td>
 						<td>${contato.email}</td>
 						<td>${contato.nome}</td>					
-						<td><a href="mostrarContato?id=${contato.id_contato}"><div style="text-align:center"><i class="glyphicons-icon picture"></i></div></a></td>
+						<td>
+							<a href="mostrarContato?id=${contato.id_contato}"><div style="text-align:center"><i class="glyphicons-icon picture"></i></div>
+						</a></td>
 					</tr>
 					</c:forEach>
 				</table>

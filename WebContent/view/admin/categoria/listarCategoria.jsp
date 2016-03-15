@@ -63,7 +63,7 @@
                     <a href="#"><i class="halflings-icon user"></i> Perfil</a>
                   </li>
                   <li>
-                    <a href="login.html"><i class="halflings-icon off"></i> Logout</a>
+                    <a href="logout"><i class="halflings-icon off"></i> Logout</a>
                   </li>
                 </ul>
               </li>

@@ -15,7 +15,7 @@ public class AdministradorController {
 	@RequestMapping("exibirLogin")
 	public String exibirLogin(){
 		
-		return "admin/login";
+		return "login";
 	}
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Administrador administrador, HttpSession session,Model model)
@@ -37,5 +37,11 @@ public class AdministradorController {
 	public String exibirIndex()
 	{
 		return "admin/index";
+	}
+	@RequestMapping("logout")
+	public String logout(HttpSession session){
+		
+		session.invalidate();
+		return "login";
 	}
 }

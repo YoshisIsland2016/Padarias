@@ -67,7 +67,6 @@
                 <div class="button-login">
                   <button type="submit" class="btn btn-primary">Login</button>
                 </div>
-                
                 <div class="clearfix">${msg}</div>
                 <hr>
               </fieldset>

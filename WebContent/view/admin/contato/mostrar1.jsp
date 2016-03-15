@@ -22,6 +22,6 @@
 		</p>
 		
 		<a class="btn btn-success" href="listarContato">Voltar</a>
-	</form>
+	</form>	
 </body>
 </html>
