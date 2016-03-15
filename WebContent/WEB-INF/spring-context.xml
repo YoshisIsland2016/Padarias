@@ -36,10 +36,8 @@
 		</property>
 	</bean>
 
-	<!-- 
 	<mvc:interceptors>
 		<bean class="br.com.yoshimachine.padaria.util.AutorizadorInterceptor" />
 	</mvc:interceptors>
- 	-->
  	
 </beans>

@@ -118,9 +118,9 @@
 					</p>
 					Promocao: <br/>
 					<select name="promocao">			
-						<option> </option>
-						<option value="1">Sim</option>
+						<option value="0"></option>
 						<option value="0">Não</option>
+						<option value="1">Sim</option>
 					</select>
 					<p>
 						Imagem: <br />

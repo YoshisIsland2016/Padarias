@@ -13,14 +13,14 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("padaria/") || uri.endsWith("efetuarLogin") || uri.contains("admin")) {
+				|| uri.endsWith("padaria/") || uri.endsWith("efetuarLogin") || uri.contains("exibirLogin")) {
 			return true;
 		}
 
 		if (request.getSession().getAttribute("administradorLogado") != null) {
 			return true;
 		}
-		response.sendRedirect("index");
+		response.sendRedirect("exibirLogin");
 		return false;
 	}
 	
