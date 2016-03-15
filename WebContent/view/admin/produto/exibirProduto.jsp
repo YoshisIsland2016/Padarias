@@ -114,7 +114,7 @@
 					</p>
 					<p>
 						Preco(R$): <br />
-						<input type="text" required="required" maxlength="15" name="preco" pattern="[0-9]+$" />
+						<input type="text" required="required" maxlength="15" name="preco" pattern="([0-9]{1,3}\.)?[0-9]{1,3}.[0-9]{2}$" maxlength="15"  />
 					</p>
 					Promocao: <br/>
 					<select name="promocao">			
