@@ -33,10 +33,10 @@ public class TesteCategorias {
 		categoria.setId_categoria(1);
 		int qtdInicio = dao.getListar().size();
 		dao.getRemover(categoria.getId_categoria());
-		int qtdFim = dao.getListar().size();
+		int qtdFim = dao.getListar().size(); 
 
 		Assert.assertEquals(qtdInicio - 1, qtdFim);
-
+		
 	}
 
 }

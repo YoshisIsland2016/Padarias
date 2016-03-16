@@ -41,9 +41,10 @@ body{
 	float:left;
 }
 #categorias{
-	width:19%;	
+	width:15%;	
 	float:left;
 	border:#257879 2px solid;
+	padding:2%;
 	
 }
 .produto{
