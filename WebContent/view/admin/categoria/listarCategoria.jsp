@@ -1,7 +1,8 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
     <!-- start: Meta -->
     <meta charset="utf-8">
     <title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
@@ -99,23 +100,27 @@
             <div class="clearfix">           		
            		<div style="color: red;" align="center"> <h3> ${msg} </h3> </div>
            		<br/>
-           		<table>
-					<tr>
-					<th>Id</th>
-					<th>Nome</th>
-					<th>Descricao</th>		
-					<th>Editar</th>
-					<th>Remover</th>
-					</tr>
-					<c:forEach items="${categorias}" var="categoria">
-					<tr>
-						<td>${categoria.id_categoria}</td>
-						<td>${categoria.nome_categoria}</td>
-						<td>${categoria.descricao}</td>					
-						<td><a href="#" onclick="remover(${categoria.id_categoria},'Categoria')">Remover</a></td>
-						<td><a href="mostrarCategoria?id=${categoria.id_categoria}">Editar</a></td>
-					</tr>
-					</c:forEach>
+           		<table class="table table-hover table-bordered table-condensed">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nome</th>
+							<th>Descricao</th>		
+							<th>Remover</th>
+							<th>Alterar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${categorias}" var="categoria">
+						<tr>
+							<td>${categoria.id_categoria}</td>
+							<td>${categoria.nome_categoria}</td>
+							<td>${categoria.descricao}</td>					
+							<td><a href="#" onclick="remover(${categoria.id_categoria},'Categoria')">Remover</a></td>
+							<td><a href="mostrarCategoria?id=${categoria.id_categoria}">Alterar</a></td>
+						</tr>
+						</c:forEach>
+					</tbody>
 				</table>			
             </div>
           </div>

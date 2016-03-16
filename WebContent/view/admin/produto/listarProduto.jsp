@@ -120,38 +120,42 @@
 					<br/>
 			
 			
-				<table id="tabela" style="background-color:#1C9DDF;">
-					<tr style="background-color: #E6E6E6; font-weight: bold;">
-					<th>Id</th>
-					<th>Nome</th>
-					<th>Categoria</th>
-					<th>Preco</th>
-					<th>Promocao</th>
-					<th>Imagem</th>		
-					<th>Editar</th>
-					<th>Remover</th>
-					</tr>
-					<c:forEach items="${produtos}" var="produto">
-					<tr>
-						<td>${produto.id_produto}</td>
-						<td>${produto.nome_produto}</td>
-						<td>${produto.categoriafk.nome_categoria}</td>	
-						<td>R$ ${produto.preco}</td>
-						<td>
-						<c:choose>
-							<c:when test="${produto.promocao}">
-								Sim
-							</c:when>
-							<c:otherwise>
-								Não
-							</c:otherwise>
-						</c:choose>
-						</td>
-						<td><img style="width:10vw;height:12vh;" src="view/img/${produto.imagem }" /></td>
-						<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
-						<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
-					</tr>
-					</c:forEach>
+				<table id="tabela" class="table table-hover table-bordered table-condensed">
+					<thead>
+						<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Categoria</th>
+						<th>Preco</th>
+						<th>Promocao</th>
+						<th>Imagem</th>		
+						<th>Editar</th>
+						<th>Remover</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${produtos}" var="produto">
+						<tr>
+							<td>${produto.id_produto}</td>
+							<td>${produto.nome_produto}</td>
+							<td>${produto.categoriafk.nome_categoria}</td>	
+							<td>R$ ${produto.preco}</td>
+							<td>
+							<c:choose>
+								<c:when test="${produto.promocao}">
+									Sim
+								</c:when>
+								<c:otherwise>
+									Não
+								</c:otherwise>
+							</c:choose>
+							</td>
+							<td><img style="width:10vw;height:12vh;" src="view/img/${produto.imagem }" /></td>
+							<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
+							<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
+						</tr>
+						</c:forEach>
+					</tbody>
 				</table>			
             </div>
           </div>

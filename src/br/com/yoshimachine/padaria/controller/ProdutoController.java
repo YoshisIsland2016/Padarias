@@ -95,17 +95,19 @@ public class ProdutoController {
 		
 		StringBuilder st = new StringBuilder();
 		
-		st.append("<tr style='background-color: #E6E6E6; font-weight: bold;'>");
-		st.append("<th> ID </th>");
-		st.append("<th> NOME </th>");
-		st.append("<th> CATEGORIA </th>");
-		st.append("<th> PRECO </th>");
-		st.append("<th> PROMOCAO </th>");
-		st.append("<th> IMAGEM </th>");
-		st.append("<th> REMOVER </th>");
-		st.append("<th> ALTERAR </th>");
+		st.append("<thead>");
+		st.append("<tr>");
+		st.append("<th>Id</th>");
+		st.append("<th>Nome</th>");
+		st.append("<th>Categoria</th>");
+		st.append("<th>Preço</th>");
+		st.append("<th>Promoção</th>");
+		st.append("<th>Imagem</th>");
+		st.append("<th>Remover</th>");
+		st.append("<th>Alterar</th>");
 		st.append("</tr>");
-		
+		st.append("</thead>");
+		st.append("<tbody>");
 		for(Produto produto : listaProduto){
 			st.append("<tr>");
 			st.append("<td>"+produto.getId_produto()+"</td>");
@@ -126,6 +128,7 @@ public class ProdutoController {
 			st.append("</tr");
 			st.append("<br/>");
 		}
+		st.append("</tbody>");
 		
 		response.setStatus(200);
 		return st.toString();

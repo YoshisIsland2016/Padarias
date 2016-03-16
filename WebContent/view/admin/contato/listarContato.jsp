@@ -99,23 +99,27 @@
             <div class="clearfix">           		
            		<div style="color: red;" align="center"> <h3> ${msg} </h3> </div>
            		<br/>
-           		<table>
-					<tr>
-					<th>Id</th>
-					<th>Email</th>
-					<th>Nome</th>
-					<th>Visualizar</th>
-					</tr>
-					<c:forEach items="${contatos}" var="contato">
-					<tr>
-						<td>${contato.id_contato}</td>
-						<td>${contato.email}</td>
-						<td>${contato.nome}</td>					
-						<td>
-							<a href="mostrarContato?id=${contato.id_contato}"><div style="text-align:center"><i class="glyphicons-icon picture"></i></div>
-						</a></td>
-					</tr>
-					</c:forEach>
+           		<table class="table table-hover table-bordered table-condensed">
+					<thead>
+						<tr>
+						<th>Id</th>
+						<th>Email</th>
+						<th>Nome</th>
+						<th>Visualizar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${contatos}" var="contato">
+						<tr>
+							<td>${contato.id_contato}</td>
+							<td>${contato.email}</td>
+							<td>${contato.nome}</td>					
+							<td>
+								<a href="mostrarContato?id=${contato.id_contato}"><div style="text-align:center"><i class="glyphicons-icon picture"></i></div>
+							</a></td>
+						</tr>
+						</c:forEach>
+					</tbody>
 				</table>
 			</div>
 			</div>

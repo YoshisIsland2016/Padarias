@@ -95,12 +95,8 @@
               <a href="exibirIndex">Home</a>
             </li>
           </ul>
-          <div class="row-fluid"></div>
-          <div class="row-fluid"></div>
-          <div class="row-fluid hideInIE8 circleStats"></div>
-          <div class="row-fluid"></div>
-          <div class="row-fluid"></div>
           <div class="row-fluid">
+          	<h1>Seja bem vindo ao painel do Administrador caro usuário <span style="color:red;font-weight: bold">${administradorLogado.login}</span></h1>
             <div class="clearfix"></div>
           </div>
           <!--/row-->
