@@ -1,6 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Padaria Santa Maria" />
@@ -8,99 +8,20 @@
 	<title>Padaria Santa Maria</title>
 	<link rel="stylesheet" href="view/css/bootstrap.css">
 	<link rel="stylesheet" href="view/css/bootstrap-responsive.css">
-	<link rel="stylesheet" href="view/css/style.css">		
+	<link rel="stylesheet" href="view/css/style.css" >
 	<script src="view/js/jquery-1.11.3.min"></script>
-	<script src="view/js/bootstrap.js"></script>
 	<script src="view/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!-- Container de DIVS-->
-	<div class="container-fluid">
-		<!-- Linha Fluid para DIVS internas-->
+	<div id="container" class="container-fluid">
 		<div class="row-fluid">
-			<!-- DIV para Menu -->
-			<div id="topo" class="span12">
-				<div>
-					<a href="">Inicio</a>
-					<a href="">Produtos</a>
-					<a href="">Quem somos</a>
-					<a href="">Fale Conosco</a>				
-				</div>
+			<c:import url="menu.jsp" />
+			<div id="parte2" class="span10">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
-			<!-- FIM DA DIV para Menu -->
-			<!-- DIV para PROMOCOES DOS PRODUTOS e Slideshow-->
-			<div class="row-fluid">				
-				<!-- DIV de PROMOCOES -->
-				<div class="span2">
-					<div class="promocao">
-						<img src="view/img/slides/2.jpg" alt="">
-						PROMOCAO DA DIA
-					</div>
-					<div class="promocao">
-						<img src="view/img/slides/3.jpg" alt="">
-						PROMOCAO DA DIA
-					</div>
-					<div class="promocao">
-						<img src="view/img/slides/4.jpg" alt="">
-						PROMOCAO DA DIA
-					</div>
-					<div class="promocao">
-						<img src="view/img/slides/4.jpg" alt="">
-						PROMOCAO DA DIA
-					</div>
-					<div class="promocao">
-						<img src="view/img/slides/4.jpg" alt="">
-						PROMOCAO DA DIA
-					</div>
-				</div>
-				<!-- FIM DA DIV de PROMOCOES -->	
-				<div class="span10">
-					<!-- DIV para SLIDESHOW -->
-					<div class="container-fluid">
-						<section class="row-fluid carousel slide span12" id="carrossel">
-							<div id="slideshow" class="carousel-inner">
-								<figure class="active item">
-									<img src="img/slides/1.jpg" alt="img1">
-									<figurecaption class="carousel-caption imagem justificar">
-										<h4>Torta de Frango</h4>
-										<p>Torta de Frango suculenta recheada com frango ao molho e catupiry.</p>
-									</figurecaption>
-								</figure>
-								<figure class="item">
-									<img src="img/slides/2.jpg" alt="img2">
-									<figurecaption class="carousel-caption imagem justificar">
-										<h4>Bolo de Rolo</h4>
-										<p>Bolo de Rolo recheado com goiabada e coberta de açúcar cristal.</p>
-									</figurecaption>
-								</figure>
-								<figure class="item">
-									<img src="img/slides/3.jpg" alt="img3">
-									<figurecaption class="carousel-caption imagem justificar">
-										<h4>Pizza de Calabresa</h4>
-										<p>Pizza recheada com molho bolognesa e com calabresa fresca e cebola .</p>
-									</figurecaption>
-								</figure>
-								<figure class="item">
-									<img src="img/slides/4.jpg" alt="img4">
-									<figurecaption class="carousel-caption imagem justificar">
-										<h4>Torta de morango</h4>
-										<p>Torta recheada com morango, biscoitos e com duas camadas de recheio .</p>
-									</figurecaption>
-								</figure>
-							</div>
-							<a href="#carrossel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
-							<a href="#carrossel" class="carousel-control right offset1" data-slide="next">&rsaquo;</a>
-						</section>
-					</div>
-					<!-- FIM DA DIV para SLIDESHOW -->
-					<div id="corpo" class="span11">
-						<h2>Bem vindo a Padaria Santa Maria</h2>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eum assumenda nostrum accusamus molestiae labore, asperiores laudantium itaque officiis dignissimos sint corporis sapiente et ex, in impedit pariatur, aliquam recusandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eum assumenda nostrum accusamus molestiae labore, asperiores laudantium itaque officiis dignissimos sint corporis sapiente et ex, in impedit pariatur, aliquam recusandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eum assumenda nostrum accusamus molestiae labore, asperiores laudantium itaque officiis dignissimos sint corporis sapiente et ex, in impedit pariatur, aliquam recusandae?
-					</div>
-				</div>				
-			</div>
-			<!-- FIM DA DIV para PROMOCOES DOS PRODUTOS e Slideshow-->
 		</div>
 	</div>
+	
 </body>
 </html>
