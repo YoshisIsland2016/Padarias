@@ -43,10 +43,10 @@ public class TelaController {
 		return "produtos";
 	}
 	@RequestMapping("verProduto")
-	public String verProduto(int id,Model mP,Model mA)
+	public String verProduto(Produto produto,Model mP,Model mA)
 	{
 		ProdutoDao dao = new ProdutoDao();
-		mP.addAttribute("produto",dao.buscaId(id));
+		mP.addAttribute("produto",dao.buscaId(produto.getId_produto()));
 		
 		AvaliacaoDao avaliacaoDao = new AvaliacaoDao();
 		

@@ -36,8 +36,11 @@
 					<div id="avaliar" class="span5">
 						<h2>Deixe sua Avaliação</h2>
 						<form action="salvarAvaliacao">
+							<!-- Hiddens -->
 							<input type="hidden" name="produtoid" value="${produto.id_produto}" />
 							<input type="hidden" name="permissao" value="true" />
+							<input type="hidden" name="id_produto" value="${produto.id_produto }" />
+							<!-- END Hiddens -->
 							<p>
 							Nome:
 							<input type="text" name="nome" /><br/>
@@ -51,7 +54,7 @@
 							<select name="nota">
 								<option value="1">Muito Ruim</option>
 								<option value="2">Ruim</option>
-								<option value="3">RazoÃ¡vel</option>
+								<option value="3">Razoável</option>
 								<option value="4">Bom</option>
 								<option value="5">Muito Bom</option>
 							</select>

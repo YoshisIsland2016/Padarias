@@ -11,19 +11,26 @@
 <link rel="stylesheet" href="view/css/style.css">
 <script src="view/js/jquery-1.11.3.min"></script>
 <script src="view/js/bootstrap.min.js"></script>
+<script>
+function avaliacao_mensagem(msg)
+{
+	alert(msg);	
+}
+</script>
 </head>
 <body>
 	<div id="container" class="container-fluid">
 		<div class="row-fluid">
-			<c:import url="menu.jsp" />
+			<c:import url="menu.jsp" />			
 			<div id="parte2" class="span10">
+				<div style="color:red;font-weight: bold"><h4>${msg}</h4></div>
 				<center>
 					<h1>Produtos</h1>
 				</center>
 				<div id="produtos">
 					<c:forEach items="${produtos}" var="produto">
 						<div class="produto btn-success">
-							${produto.nome_produto}:<br /> <a href="verProduto?id=${produto.id_produto}" ><img src="view/img/produtos/${produto.imagem}" /> </a>Preço: R$ ${produto.preco} 
+							${produto.nome_produto}:<br /> <a href="verProduto?id_produto=${produto.id_produto}" ><img src="view/img/produtos/${produto.imagem}" /> </a>Preço: R$ ${produto.preco} 
 						</div>
 					</c:forEach>
 				</div>

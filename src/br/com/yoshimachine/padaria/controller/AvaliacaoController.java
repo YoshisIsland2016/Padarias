@@ -5,16 +5,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.yoshimachine.padaria.dao.AvaliacaoDao;
 import br.com.yoshimachine.padaria.model.Avaliacao;
+import br.com.yoshimachine.padaria.model.Produto;
 
 
 @Controller
 public class AvaliacaoController {
 	
 	@RequestMapping("salvarAvaliacao")
-	public String SalvarAvaliacao(Avaliacao avaliacao,Model model){
+	public String SalvarAvaliacao(Avaliacao avaliacao,Produto produto,Model model){
 		
 		AvaliacaoDao dao = new AvaliacaoDao();
-		dao.getSalvar(avaliacao);		
+		dao.getSalvar(avaliacao);	
 		model.addAttribute("msg","Avaliacao Salva com sucesso!");
 		
 		return "forward:exibirProdutos";

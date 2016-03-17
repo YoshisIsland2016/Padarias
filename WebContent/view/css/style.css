@@ -41,10 +41,9 @@ body{
 	float:left;
 }
 #categorias{
-	width:15%;	
+	width:19%;	
 	float:left;
 	border:#257879 2px solid;
-	padding:2%;
 	
 }
 .produto{
@@ -60,4 +59,33 @@ body{
 	margin-top:1%;
 	margin-bottom: 1%;
 	border:#055E09 2px solid;
+}
+#verProduto{
+	margin-bottom: 3%;
+}
+.imagemProduto{
+	text-align: center;
+	float:left;
+}
+.imagemProduto img{
+	width: 40vw;
+	height:50vh;
+	border:#080808 2px solid;
+}
+.info{
+	background-color: #696161;
+	margin-top: 6.5%;
+	border:#ADA9A9 2px solid;
+	border-radius: 5px;
+	color:white;
+	padding:1%;
+	float:left;
+}
+#avaliar{
+	background-color: #5D5C5C;
+	padding:2%;
+	border-radius: 10px;
+}
+#comentarios{
+	background-color: red;
 }
