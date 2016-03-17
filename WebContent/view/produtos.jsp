@@ -23,12 +23,9 @@
 				<div id="produtos">
 					<c:forEach items="${produtos}" var="produto">
 						<div class="produto btn-success">
-							${produto.nome_produto}:<br /> <img src="view/img/slides/2.jpg" /> Preço: R$ ${produto.preco}
+							${produto.nome_produto}:<br /> <a href="verProduto?id=${produto.id_produto}" ><img src="view/img/produtos/${produto.imagem}" /> </a>Preço: R$ ${produto.preco} 
 						</div>
 					</c:forEach>
-					<div class="produto btn-success">
-						Nome:<br /> <img src="view/img/slides/2.jpg" /> PreÃ§o: R$ 15.00
-					</div>
 				</div>
 				<div id="categorias" class="btn-info">
 					<h3>Categorias</h3>					

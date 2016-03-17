@@ -14,7 +14,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("img") || uri.contains("js")
 				|| uri.endsWith("padaria/") || uri.endsWith("efetuarLogin") || uri.contains("exibirLogin") || 
-				uri.contains("exibirHome") || uri.contains("exibirProdutos") || uri.contains("verCategoria")) {
+				uri.contains("exibirHome") || uri.contains("exibirProdutos") || uri.contains("verCategoria") || uri.contains("verProduto") || uri.contains("salvarAvaliacao")) {
 			return true;
 		}
 

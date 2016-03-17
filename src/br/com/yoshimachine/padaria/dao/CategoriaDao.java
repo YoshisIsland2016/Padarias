@@ -33,7 +33,7 @@ public class CategoriaDao {
 
 			stmt.execute();
 			stmt.close();
-
+			close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
@@ -59,6 +59,7 @@ public class CategoriaDao {
 			}
 			rs.close();
 			stmt.close();
+			close();
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -78,7 +79,7 @@ public class CategoriaDao {
 
 			stmt.execute();
 			stmt.close();
-
+			close();
 			return true;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -101,7 +102,8 @@ public class CategoriaDao {
 			}
 			rs.close();
 			stmt.close();
-
+			close();
+			
 			return categoria;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -116,7 +118,8 @@ public class CategoriaDao {
 			stmt.setInt(1, id);
 
 			stmt.execute();
-
+			close();
+			
 			return true;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -146,7 +149,7 @@ public class CategoriaDao {
 
 			rs.close();
 			stmt.close();
-
+			close();
 			return categorias;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

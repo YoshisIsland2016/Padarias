@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Calendar;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,7 +18,7 @@ public class Util {
 			try {
 				// Criando o diretório para armazenar o arquivo
 				String workspaceProjeto = "/home/ifpe/git/Padarias";
-				File dir = new File(workspaceProjeto + "/WebContent/view/img");
+				File dir = new File(workspaceProjeto + "/WebContent/view/img/produtos");
 
 				if (!dir.exists()) {
 					dir.mkdirs();
