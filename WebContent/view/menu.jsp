@@ -9,6 +9,6 @@
 					<hr>
 					<a href="view/sobre_nos.html" >SOBRE NÓS</a>
 					<hr>
-					<a href="view/fale_conosco.html" >FALE CONOSCO</a>
+					<a href="exibirSalvarContato" >FALE CONOSCO</a>
 				</div>
 			</div>

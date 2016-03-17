@@ -10,7 +10,6 @@ import br.com.yoshimachine.padaria.dao.AvaliacaoDao;
 import br.com.yoshimachine.padaria.dao.CategoriaDao;
 import br.com.yoshimachine.padaria.dao.ProdutoDao;
 import br.com.yoshimachine.padaria.model.Produto;
-import br.com.yoshimachine.padaria.model.Categoria;
 
 @Controller
 public class TelaController {

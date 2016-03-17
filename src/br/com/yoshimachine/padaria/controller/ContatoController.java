@@ -13,14 +13,16 @@ public class ContatoController {
 	@RequestMapping("exibirSalvarContato")
 	public String exibirSalvarContato()
 	{		
-		return "admin/contato/exibirContato";
+		return "fale_conosco";
 	}
 	@RequestMapping("salvarContato")
-	public String SalvarProduto(Contato contato){
+	public String SalvarProduto(Contato contato,Model model){
 		
 		ContatoDao dao = new ContatoDao();
 		dao.getSalvar(contato);
-		return "admin/contato/salvarContatoSucesso";
+		model.addAttribute("msg","Mensagem salva com sucesso!");
+		
+		return "forward:exibirSalvarContato";
 	}
 	@RequestMapping("listarContato")
 	public String ListarProduto(Model model){
