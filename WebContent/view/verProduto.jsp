@@ -68,6 +68,7 @@
 					</div>
 					<div id="comentarios" class="span6">
 						<h2>Comentários</h2>
+						<hr>
 						<c:forEach items="${avaliacoes}" var="avaliacao">
 							<div class="btn-info" style="padding:1%;color:black;border:#1C49CA 2px solid;border-radius:5px;margin-bottom: 1%">
 								<span style="color:blue"><h4>Nome: ${avaliacao.nome}</h4></span>
