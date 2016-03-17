@@ -68,15 +68,15 @@
 					</div>
 					<div id="comentarios" class="span6">
 						<h2>Comentários</h2>
-						<c:forEach items="${avaliacao}" var="obj">						
-							<div style="background-color: white;padding:1%;">
-								<h4>Nome: ${obj.nome}</h4>
+						<c:forEach items="${avaliacoes}" var="avaliacao">
+							<div class="btn-info" style="padding:1%;color:black;border:#1C49CA 2px solid;border-radius:5px;margin-bottom: 1%">
+								<span style="color:blue"><h4>Nome: ${avaliacao.nome}</h4></span>
 								<hr>
 								<div style="">
-									${obj.mensagem}
+									${avaliacao.mensagem}
 								</div>
 								<hr>
-								<span>Nota: ${obj.nota}</span>
+								<span style="color:green;font-weight: bold">Nota: ${avaliacao.nota}</span>
 							</div>
 						</c:forEach>
 					</div>
