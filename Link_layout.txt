@@ -1,1 +1,3 @@
 http://bootsnipp.com/snippets/featured/vertical-affix-menu-css-only
+http://bootsnipp.com/snippets/featured/simplest-contact-form
+http://sevenx.de/demo/bootstrap-carousel/#.Vuxi10JVK1F
