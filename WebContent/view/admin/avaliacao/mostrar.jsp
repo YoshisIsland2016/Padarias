@@ -105,7 +105,8 @@
               </div>
               <div class="box-content">
                 <form class="form-horizontal" action="alterarAvaliacao" method="POST">
-                  <fieldset>
+                  <input type="hidden" name="id" value="${avaliacao.id }" />
+                  <fieldset>                    
                     <div class="control-group">
                       <label class="control-label" for="typeahead">Nome:</label>
                       <div class="controls">${avaliacao.nome}</div>
@@ -127,18 +128,19 @@
                       </div>
                     </div>
                     <div class="control-group">
-                      <label class="control-label" for="date01">Permitir:</label>                      
-                      ${avaliacao.permissao}
+                      <label class="control-label" for="date01">Permitir:</label>                                         
+                      <div class="controls">
                       <c:choose>
 							<c:when test="${avaliacao.permissao}">
-								<input type="checkbox" name="permissao" value="1" checked> Sim
-								<input type="checkbox" name="permissao" value="0"> Não								
+								<input type="checkbox" name="permissao" value="true" checked> Sim
+								<input type="checkbox" name="permissao" value="false"> Não								
 							</c:when>
 							<c:otherwise>
-								<input type="checkbox" name="permissao" value="0" checked> Não
-								<input type="checkbox" name="permissao" value="1"> Sim						
+								<input type="checkbox" name="permissao" value="false" checked> Não
+								<input type="checkbox" name="permissao" value="true"> Sim						
 							</c:otherwise>
-						</c:choose>                      
+						</c:choose>
+						</div>                      
                     </div>
                     <div class="form-actions">
                       <a class="btn btn-success" href="listarAvaliacao">Voltar</a>

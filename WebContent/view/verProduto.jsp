@@ -47,7 +47,7 @@
 						<form action="salvarAvaliacao">
 							<!-- Hiddens -->
 							<input type="hidden" name="produtoid" value="${produto.id_produto}" />
-							<input type="hidden" name="permissao" value="true" />
+							<input type="hidden" name="permissao" value="false" />
 							<input type="hidden" name="id_produto" value="${produto.id_produto }" />
 							<!-- END Hiddens -->
 							<p>
@@ -79,6 +79,7 @@
 						<h2>Comentários</h2>
 						<hr>
 						<c:forEach items="${avaliacoes}" var="avaliacao">
+							<c:if test="${avaliacao.permissao}">
 							<div class="" style="padding:1%;color:black;border:white 1px solid;border-radius:2px;margin-bottom: 1%">
 								<span class="btn-info"><h4>Nome: ${avaliacao.nome}</h4></span>
 								<hr class="border:1px">
@@ -88,6 +89,7 @@
 								<hr>
 								<span class="btn-default"> Nota: ${avaliacao.nota}</span>
 							</div>
+							</c:if>
 						</c:forEach>
 					</div>
 				</div>
