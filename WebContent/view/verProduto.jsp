@@ -48,7 +48,7 @@
 							<!-- Hiddens -->
 							<input type="hidden" name="produtoid" value="${produto.id_produto}" />
 							<input type="hidden" name="permissao" value="false" />
-							<input type="hidden" name="id_produto" value="${produto.id_produto }" />
+							<input type="hidden" name="id_produto" value="${produto.id_produto}" />
 							<!-- END Hiddens -->
 							<p>
 							Nome:

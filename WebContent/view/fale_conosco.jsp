@@ -16,32 +16,32 @@
 	<div id="container" class="container-fluid">
 		<div class="row-fluid">
 			<c:import url="menu.jsp" />
-			<div id="parte2" class="span10">
+			<div align ="center" id="parte2" class="span10">
 				<h2>Fale Conosco</h2>
 				<br />
 				<div class="faleconosco">
 					<form class="form-horizontal" action="salvarContato" method="POST">						
-						<div class="control-group">
+						<div style="margin-left: 25%" class="control-group">
 							<label for="inputNome" class="control-label"></label>
 							<div class="input-append">								
 								<input class="entradas" type="text" placeholder="Nome" id="inputSuccess" name="nome" />							
 								<span class="add-on">N</span>
 							</div>
 						</div>
-						<div class="control-group">
+						<div style="margin-left: 25%" class="control-group">
 							<label for="inputEmail" class="control-label"></label>
 							<div class="input-append">								
 								<input class="entradas" type="email" required placeholder="Email" name="email" />
 								<span class="add-on">@</span>
 							</div>
 						</div>
-						<div class="control-group">
+						<div style="margin-left: 25%" class="control-group">
 							<label for="" class="control-label"></label>
 							<div>
 								<textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Digite sua mensagem aqui"></textarea>
 							</div>
 						</div>
-						<div class="control-group">
+						<div style="margin-left: 25%" class="control-group">
 							<label for="" class="control-label"></label>
 							<div>
 								<input type="submit" class="btn btn-success" value="Enviar" />

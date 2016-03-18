@@ -1,14 +1,15 @@
-			<div id="parte1" class="btn-primary span2">
-				<center><img src="view/img/logotipo.png" /></center>
-				<br/>
-				<div id="menu">
-					<hr>
-					<a href="exibirHome" >HOME</a>				
-					<hr>
-					<a href="exibirProdutos" >PRODUTOS</a>
-					<hr>
-					<a href="view/sobre_nos.html" >SOBRE NÓS</a>
-					<hr>
-					<a href="exibirSalvarContato" >FALE CONOSCO</a>
-				</div>
-			</div>
+
+<div id="parte1" class="btn-primary span2">
+	<center>
+		<img src="view/img/logotipo.png" />
+	</center>
+	<br />
+	<nav id="menu">
+		<ul>
+			<li><a href="exibirHome">Home</a></li>
+			<li><a href="exibirProdutos">Produtos</a></li>
+			<li><a href="view/sobre_nos.html">Sobre nós</a></li>
+			<li><a href="exibirSalvarContato">Fale Conosco</a></li>
+		</ul>
+	</nav>
+</div>

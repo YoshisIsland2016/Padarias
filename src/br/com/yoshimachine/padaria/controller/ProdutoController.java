@@ -100,8 +100,8 @@ public class ProdutoController {
 		st.append("<th>Id</th>");
 		st.append("<th>Nome</th>");
 		st.append("<th>Categoria</th>");
-		st.append("<th>Preço</th>");
-		st.append("<th>Promoção</th>");
+		st.append("<th>PreÃ§o</th>");
+		st.append("<th>PromoÃ§Ã£o</th>");
 		st.append("<th>Imagem</th>");
 		st.append("<th>Remover</th>");
 		st.append("<th>Alterar</th>");
