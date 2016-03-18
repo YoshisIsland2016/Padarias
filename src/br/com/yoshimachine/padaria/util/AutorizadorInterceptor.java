@@ -15,7 +15,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("img") || uri.contains("js")
 				|| uri.endsWith("padaria/") || uri.endsWith("efetuarLogin") || uri.contains("exibirLogin") || 
 				uri.contains("exibirHome") || uri.contains("exibirProdutos") || uri.contains("verCategoria") || 
-				uri.contains("verProduto") || uri.contains("salvarAvaliacao") || uri.contains("exibirSalvarContato") || uri.contains("salvarContato")) {
+				uri.contains("verProduto") || uri.contains("salvarAvaliacao") || uri.contains("exibirSalvarContato") || uri.contains("salvarContato")
+				|| uri.contains("listarAvaliacao") || uri.contains("mostrarAvaliacao") || uri.contains("alterarAvaliacao")) {
 			return true;
 		}
 

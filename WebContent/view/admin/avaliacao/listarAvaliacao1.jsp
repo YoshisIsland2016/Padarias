@@ -7,7 +7,7 @@
 <title>Listando Contatos</title>
 </head>
 <body>
-	<c:import url="/view/admin/comum/menu.jsp" />
+	<c:import url="/view/comum/menu.jsp" />
 	<table>
 		<tr>
 		<th>Id</th>

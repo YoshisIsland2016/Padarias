@@ -49,7 +49,7 @@ public class TelaController {
 		
 		AvaliacaoDao avaliacaoDao = new AvaliacaoDao();
 		
-		mA.addAttribute("avaliacoes",avaliacaoDao.getListar());
+		mA.addAttribute("avaliacoes",avaliacaoDao.getBuscar(produto));
 		
 		return "verProduto";
 	}

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.yoshimachine.padaria.model.Avaliacao;
+import br.com.yoshimachine.padaria.model.Produto;
 import br.com.yoshimachine.padaria.util.ConnectionFactory;
 
 public class AvaliacaoDao {
@@ -66,19 +67,36 @@ public class AvaliacaoDao {
 		
 		return avaliacoes;
 	}
-	/*
-	public boolean getAlterar(Produto produto){
-		String sql = "UPDATE produtos SET nome_produto=?,categoriafk=?,preco=?,promocao=?,imagem=?,descricao=? WHERE id_produto=?";
+	public Avaliacao buscaId(Avaliacao avaliacao_preenchido){
+		String sql = "SELECT * FROM avaliacao WHERE id = ?";
+				
+		try{
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, avaliacao_preenchido.getId());
+			
+			ResultSet rs = stmt.executeQuery();
+						
+			Avaliacao avaliacao = null;
+			
+			if(rs.next()){
+				avaliacao = montarObjeto(rs);
+			}
+			rs.close();
+			stmt.close();
+			con.close();
+			return avaliacao;
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public boolean getAlterar(Avaliacao avaliacao){
+		String sql = "UPDATE avaliacao SET permissao = ? WHERE id=?";
 		
 		try{
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setString(1, produto.getNome_produto());
-			stmt.setLong(2, produto.getCategoriafk().getId_categoria());
-			stmt.setDouble(3, produto.getPreco());
-			stmt.setBoolean(4, produto.isPromocao());
-			stmt.setString(5, produto.getImagem());		
-			stmt.setString(6, produto.getDescricao());
-			stmt.setInt(7, produto.getId_produto());
+			stmt.setBoolean(1, avaliacao.isPermissao());
+			stmt.setInt(2, avaliacao.getId());
 			
 			stmt.execute();			
 			stmt.close();
@@ -88,117 +106,15 @@ public class AvaliacaoDao {
 			throw new RuntimeException(e);			
 		}		
 	}
-	public Produto buscaId(int id){
-		String sql = "SELECT * FROM produtos WHERE id_produto = ?";
-				
-		try{
-			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setInt(1, id);
-			
-			ResultSet rs = stmt.executeQuery();
-						
-			Produto produto = null;
-			
-			if(rs.next()){
-				produto = montarObjeto(rs);
-			}
-			rs.close();
-			stmt.close();
-			con.close();
-			return produto;
-		}catch(SQLException e){
-			throw new RuntimeException(e);
-		}
-	}
-	public boolean getRemover(int id){
-		String sql = "DELETE FROM produtos WHERE id_produto=?";
+	public List<Avaliacao> getBuscar(Produto produto){
+		String sql = "SELECT * FROM avaliacao WHERE produtoid = ?";
+		List<Avaliacao> produtos = new ArrayList<Avaliacao>();
 		
 		try{
-			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setInt(1, id);
-			
-			stmt.execute();
-			con.close();
-			return true;
-		}catch(SQLException e){
-			throw new RuntimeException(e);
-		}
-	}
-	public List<Produto> getBuscar(String nome_produto,Integer categoriafk, Boolean promocao){
-		//String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categorifk = ? AND promocao = ?";
-		
-		try{
-			List<Produto> produtos = new ArrayList<Produto>();
 			PreparedStatement stmt = null;
-			
-			if(!nome_produto.equals("") && categoriafk == null && promocao == false)
-			{
-				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setString(1, "%"+nome_produto+"%");
-			}
-			else if(nome_produto.equals("") && categoriafk != null && promocao == false)
-			{
-				String sql = "SELECT * FROM produtos WHERE categoriafk = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setInt(1, categoriafk);
-			}
-			else if(nome_produto.equals("") && categoriafk == null && promocao != false)
-			{
-				String sql = "SELECT * FROM produtos WHERE promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setBoolean(1, promocao);
-			}
-			else if(nome_produto.equals("") && categoriafk != null && promocao != false)
-			{
-				String sql = "SELECT * FROM produtos WHERE categoriafk = ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setInt(1, categoriafk);
-				stmt.setBoolean(2, promocao);
-			}
-			else if(!nome_produto.equals("") && categoriafk != null && promocao == false)
-			{
-				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setString(1, "%"+nome_produto+"%");
-				stmt.setInt(2, categoriafk);				
-			}
-			else if(!nome_produto.equals("") && categoriafk == null && promocao != false)
-			{
-				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setString(1, "%"+nome_produto+"%");
-				stmt.setBoolean(2,promocao);
-			}
-			else if(nome_produto.equals("") && categoriafk != null && promocao != false)
-			{
-				String sql = "SELECT * FROM produtos WHERE categoriafk = ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setInt(1, categoriafk);
-				stmt.setBoolean(2, promocao);
-			}
-			else if(!nome_produto.equals("") && categoriafk != null && promocao != false)
-			{
-				String sql = "SELECT * FROM produtos WHERE nome_produto LIKE ? AND categoriafk = ? AND promocao = ? ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-				stmt.setString(1, "%"+nome_produto+"%");
-				stmt.setInt(2, categoriafk);
-				stmt.setBoolean(3, promocao);
-			}			
-			else
-			{
-				String sql = "SELECT * FROM produtos ORDER BY categoriafk";
-				
-				stmt = con.prepareStatement(sql);
-			}
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, produto.getId_produto());
 			
 			ResultSet rs = stmt.executeQuery();
 			
@@ -215,6 +131,24 @@ public class AvaliacaoDao {
 			throw new RuntimeException(e);
 		}
 	}
+	/*
+	
+	
+	public boolean getRemover(int id){
+		String sql = "DELETE FROM produtos WHERE id_produto=?";
+		
+		try{
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, id);
+			
+			stmt.execute();
+			con.close();
+			return true;
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
 	*/
 	private Avaliacao montarObjeto(ResultSet rs) throws SQLException {
 

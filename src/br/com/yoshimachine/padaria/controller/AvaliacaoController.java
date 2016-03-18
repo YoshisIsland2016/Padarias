@@ -20,47 +20,43 @@ public class AvaliacaoController {
 		
 		return "forward:exibirProdutos";
 	}
-	/*
-	@RequestMapping("listarProduto")
-	public String ListarProduto(Model model){
-		CategoriaDao dao2 = new CategoriaDao();
-		List<Categoria> listaCategoriaProduto = dao2.getListar();
-		model.addAttribute("listaCategoriaProduto", listaCategoriaProduto);
+	
+	@RequestMapping("listarAvaliacao")
+	public String ListarAvaliacao(Model model){		
+		AvaliacaoDao dao = new AvaliacaoDao();
+				
+		model.addAttribute("avaliacoes",dao.getListar());
 		
-		ProdutoDao dao = new ProdutoDao();
-		
-		model.addAttribute("produtos",dao.getListar());
-		
-		return "admin/produto/listarProduto";
+		return "admin/avaliacao/listarAvaliacao";
 	}
 	
-	@RequestMapping("removerProduto")
+	@RequestMapping("mostrarAvaliacao")
+	public String mostrarProduto(Avaliacao avaliacao,Model model){
+		
+		AvaliacaoDao dao = new AvaliacaoDao();
+		model.addAttribute("avaliacao",dao.buscaId(avaliacao));
+		
+		return "admin/avaliacao/mostrar";
+	}
+	
+	@RequestMapping("alterarAvaliacao")
+	public String alterarProduto(Avaliacao avaliacao){
+		AvaliacaoDao dao = new AvaliacaoDao();
+		dao.getAlterar(avaliacao);
+		
+		return "redirect:listarAvaliacao";
+	}
+	
+	/*
+	@RequestMapping("removerAvaliacao")
 	public String removerProduto(int id){		
-		ProdutoDao dao = new ProdutoDao();
+		AvaliacaoDao dao = new AvaliacaoDao();
 		dao.getRemover(id);
 		
 		return "redirect:listarProduto"; 
-	}
+	}	
 	
-	@RequestMapping("mostrarProduto")
-	public String mostrarProduto(int id,Model model){
-		CategoriaDao dao2 = new CategoriaDao();
-		List<Categoria> listaCategoriaProduto = dao2.getListar();
-		model.addAttribute("listaCategoriaProduto", listaCategoriaProduto);
-		
-		ProdutoDao dao = new ProdutoDao();
-		model.addAttribute("produto",dao.buscaId(id));
-		
-		return "admin/produto/mostrar";
-	}
-	
-	@RequestMapping("alterarProduto")
-	public String alterarProduto(Produto produto){
-		ProdutoDao dao = new ProdutoDao();
-		dao.getAlterar(produto);
-		
-		return "redirect:listarProduto";
-	}
+
 	
 	@RequestMapping("buscarProduto")
 	public @ResponseBody String buscarProduto(@RequestParam String nome_produto,@RequestParam Integer categoriafk,@RequestParam Boolean promocao,
