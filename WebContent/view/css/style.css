@@ -58,16 +58,19 @@ body{
 .produto img{
 	margin-top:1%;
 	margin-bottom: 1%;
+	width:20vw;
+	height:20vh;
 	border:#055E09 2px solid;
+	
 }
 #verProduto{
 	margin-bottom: 3%;
 }
-.imagemProduto{
+#imagemProduto{
 	text-align: center;
 	float:left;
 }
-.imagemProduto img{
+#imagemProduto img{
 	width: 40vw;
 	height:50vh;
 	border:#080808 2px solid;

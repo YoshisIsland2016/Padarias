@@ -150,7 +150,7 @@
 								</c:otherwise>
 							</c:choose>
 							</td>
-							<td><img style="width:10vw;height:12vh;" src="view/img/${produto.imagem }" /></td>
+							<td><img style="width:10vw;height:12vh;" src="view/img/produtos/${produto.imagem }" /></td>
 							<td><a href="#" onclick="remover(${produto.id_produto},'Produto')">Remover</a></td>
 							<td><a href="mostrarProduto?id=${produto.id_produto}">Editar</a></td>
 						</tr>

@@ -11,6 +11,15 @@
 	<link rel="stylesheet" href="view/css/style.css" >
 	<script src="view/js/jquery-1.11.3.min"></script>
 	<script src="view/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	hr {
+      border: 0px solid #f00;
+      color: #fff;
+      background-color: #fff;
+      height: 1px;
+    }
+	
+	</style>
 </head>
 <body>
 	<div id="container" class="container-fluid">
@@ -18,13 +27,13 @@
 			<c:import url="menu.jsp" />
 			<div id="parte2" class="span10">
 				<div id="verProduto" class="span12">		
-					<div class="span7 imagemProduto">
+					<div id="imagemProduto" class="span7">
 						<h1>${produto.nome_produto}</h1>
 						<br/>
 							<img src="view/img/produtos/${produto.imagem}" />
 						<br />
 					</div>
-					<div class="span5 info">
+					<div class="span4 info">
 						<h2>Descrição</h2>
 						<br/>
 						${produto.descricao}
@@ -70,14 +79,14 @@
 						<h2>Comentários</h2>
 						<hr>
 						<c:forEach items="${avaliacoes}" var="avaliacao">
-							<div class="btn-info" style="padding:1%;color:black;border:#1C49CA 2px solid;border-radius:5px;margin-bottom: 1%">
-								<span style="color:blue"><h4>Nome: ${avaliacao.nome}</h4></span>
-								<hr>
+							<div class="" style="padding:1%;color:black;border:white 1px solid;border-radius:2px;margin-bottom: 1%">
+								<span class="btn-info"><h4>Nome: ${avaliacao.nome}</h4></span>
+								<hr class="border:1px">
 								<div style="">
 									${avaliacao.mensagem}
 								</div>
 								<hr>
-								<span style="color:green;font-weight: bold">Nota: ${avaliacao.nota}</span>
+								<span class="btn-default"> Nota: ${avaliacao.nota}</span>
 							</div>
 						</c:forEach>
 					</div>
