@@ -17,8 +17,8 @@ public class TelaController {
 	@RequestMapping("exibirHome")
 	public String exibirHome()
 	{		
-		return "index";
-	}
+		return "layout/index";
+	}	
 	@RequestMapping("exibirProdutos")
 	public String exibirProdutos(Model mP,Model mC){
 		CategoriaDao dao2 = new CategoriaDao();		
@@ -28,7 +28,7 @@ public class TelaController {
 		
 		mP.addAttribute("produtos",dao.getListar());
 		
-		return "produtos";
+		return "layout/produtos";
 	}
 	@RequestMapping("verCategoria")
 	public String verCategoria(int id,Model mP,Model mC){
@@ -39,7 +39,7 @@ public class TelaController {
 		CategoriaDao dao2 = new CategoriaDao();		
 		mC.addAttribute("categorias", dao2.getListar());
 		
-		return "produtos";
+		return "layout/produtos";
 	}
 	@RequestMapping("verProduto")
 	public String verProduto(Produto produto,Model mP,Model mA)
@@ -51,7 +51,7 @@ public class TelaController {
 		
 		mA.addAttribute("avaliacoes",avaliacaoDao.getBuscar(produto));
 		
-		return "verProduto";
+		return "layout/verProduto";
 	}
 	
 }
