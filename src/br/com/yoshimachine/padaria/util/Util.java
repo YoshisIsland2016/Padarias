@@ -17,8 +17,12 @@ public class Util {
 			String nomeArquivo = imagem.getOriginalFilename();
 			try {
 				// Criando o diretório para armazenar o arquivo
-				String workspaceProjeto = "/home/ifpe/git/Padarias";
-				File dir = new File(workspaceProjeto + "/WebContent/view/img/produtos");
+				String maquina = "/home/ifpe/git/Padarias";
+				String workspaceProjeto = "/WebContent/view/img/produtos";
+				//String maquina = "/opt/tomcat-latest/webapps/padaria";
+				//String workspaceProjeto = "/view/img/produtos";
+				
+				File dir = new File(maquina + workspaceProjeto);
 
 				if (!dir.exists()) {
 					dir.mkdirs();

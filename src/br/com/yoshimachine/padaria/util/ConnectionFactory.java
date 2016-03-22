@@ -9,7 +9,8 @@ public class ConnectionFactory {
 		String nomeBanco = "padaria";
 		String usuario = "root";
 		String senha = "";
-
+		//String senha = "ifpe";
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {

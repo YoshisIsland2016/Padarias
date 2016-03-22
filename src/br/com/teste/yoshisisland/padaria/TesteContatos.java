@@ -15,19 +15,16 @@ public class TesteContatos {
 	@Test
 	public void testeInserirContato() throws SQLException {
 
-
-
 		ContatoDao dao = new ContatoDao();
 		Contato contato = new Contato();
 
 		contato.setEmail("jorgedamaga@gmail.com");
 		contato.setNome("jorgedamaga");
-		contato.setMensagem("jorge é só da maga");
-		
-		
-		int qtdInicio = dao.getListar().size();  
-		dao.getSalvar(contato); 
-		int qtdFim = dao.getListar().size(); 
+		contato.setMensagem("jorge ï¿½ sï¿½ da maga");
+
+		int qtdInicio = dao.getListar().size();
+		dao.getSalvar(contato);
+		int qtdFim = dao.getListar().size();
 		dao.close();
 		Assert.assertEquals(qtdInicio + 1, qtdFim);
 	}
@@ -35,39 +32,32 @@ public class TesteContatos {
 	@Test
 	public void testeAlterarContato() throws SQLException {
 
-
-
 		ContatoDao dao = new ContatoDao();
 		Contato contato = new Contato();
 		contato = dao.buscaEmail("jorgedamaga@gmail.com");
 		contato.setEmail("jorgedamaga2@gmail.com");
 		contato.setNome("jorgedamaga2");
-		contato .setMensagem("jorge danado da maga");
+		contato.setMensagem("jorge danado da maga");
 		dao.getAlterar(contato);
 		contato = dao.buscaEmail("jorgedamaga@gmail.com");
 		dao.close();
 		Assert.assertEquals(null, contato);
 	}
-	
+
 	@Test
 	public void testeRemoverContato() throws SQLException {
-		
+
 		ContatoDao dao = new ContatoDao();
 		Contato contato = new Contato();
 		
 		contato.setId_contato(1);
-		
+
 		int qtdInicio = dao.getListar().size();
-		dao.getSalvar(contato);
+		dao.getRemover(contato.getId_contato());
 		int qtdFim = dao.getListar().size();
 		dao.close();
 		Assert.assertEquals(qtdInicio - 1, qtdFim);
-		
-		
+
 	}
-	
-	
-	
-	
 
 }

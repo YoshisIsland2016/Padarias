@@ -20,7 +20,7 @@
         <div class="container">
           <div class="page-header">
             <h3>
-              <span class="glyphicon glyphicon-th-list"></span>${produto.nome_produto}</h3>
+              <span class="glyphicon glyphicon-th-list"></span> ${produto.nome_produto}</h3>
           </div>          
             <div id="verProduto" class="col-md-12 col-sm-12 col-xs-12">    
               <div class="col-md-9 col-sm-12 imagemProduto">

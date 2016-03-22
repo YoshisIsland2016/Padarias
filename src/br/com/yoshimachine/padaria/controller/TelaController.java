@@ -30,6 +30,12 @@ public class TelaController {
 		
 		return "layout/produtos";
 	}
+	@RequestMapping("exibirSobreNos")
+	public String exibirSobreNos(){
+		
+		return "layout/sobre_nos";
+	}
+	
 	@RequestMapping("verCategoria")
 	public String verCategoria(int id,Model mP,Model mC){
 		ProdutoDao dao = new ProdutoDao();

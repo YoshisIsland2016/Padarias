@@ -13,7 +13,7 @@ public class ContatoController {
 	@RequestMapping("exibirSalvarContato")
 	public String exibirSalvarContato()
 	{		
-		return "fale_conosco";
+		return "layout/fale_conosco";
 	}
 	@RequestMapping("salvarContato")
 	public String SalvarProduto(Contato contato,Model model){

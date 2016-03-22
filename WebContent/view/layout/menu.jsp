@@ -20,10 +20,7 @@
                 </li>
                 <li>
                   <a href="exibirProdutos">PRODUTOS</a>
-                </li>
-                <li>
-                  <a href="sobre_nos.html">SOBRE NÓS</a>
-                </li>
+                </li>                
                 <li>
                   <a href="exibirSalvarContato">FALE CONOSCO</a>
                 </li>
