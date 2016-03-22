@@ -23,46 +23,28 @@
 						<span class="glyphicon glyphicon-th-list"></span>Home
 					</h3>
 				</div>
-				<div class="container" style="height: 200px;">
-					<div id="myCarousel" class="carousel slide" style="height: 200px;">
+				<div class="container" style="height: 300px;">
+					<div id="myCarousel" class="carousel slide" style="height: 300px;">
 						<div class="carousel-inner">
 							<article class="item active">
-								<img style="width:100%;height: 200px;"
-									src="http://www.osgauleses.com.br/images/-banner.jpg">
+								<img style="width:100%;height: 300px;"
+									src="view/img/slides/1.jpg">
 								<div class="carousel-caption">
-									<h3>Headline</h3>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-										sed diam nonumy eirmod tempor invidunt ut labore et dolore
-										magna aliquyam erat, sed diam voluptua.</p>
-									<p>
-										<a class="btn btn-info btn-sm">Read More</a>
-									</p>
+														
 								</div>
 							</article>
 							<article class="item">
-								<img style="width:100%;height: 200px;"
-									src="http://www.osgauleses.com.br/images/-banner.jpg">
+								<img style="width:100%;height: 300px;"
+									src="view/img/slides/2.jpg">
 								<div class="carousel-caption">
-									<h3>Headline</h3>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-										sed diam nonumy eirmod tempor invidunt ut labore et dolore
-										magna aliquyam erat, sed diam voluptua.</p>
-									<p>
-										<a class="btn btn-info btn-sm">Read More</a>
-									</p>
+									
 								</div>
 							</article>
 							<article class="item">
-								<img style="width:100%;height: 200px;"
+								<img style="width:100%;height: 300px;"
 									src="view/img/slides/3.jpg">
 								<div class="carousel-caption">
-									<h3>Headline</h3>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-										sed diam nonumy eirmod tempor invidunt ut labore et dolore
-										magna aliquyam erat, sed diam voluptua.</p>
-									<p>
-										<a class="btn btn-info btn-sm">Read More</a>
-									</p>
+									
 								</div>
 							</article>
 						</div>

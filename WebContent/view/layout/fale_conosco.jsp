@@ -25,9 +25,11 @@
           
        		<div class="container">
 	<div class="row">
+      <div style="color:red;font-size:18px;">${msg}</div>
       <div class="col-md-6 col-md-offset-1">
         <div class="well well-sm">
-          <form class="form-horizontal" action="" method="post">
+          
+          <form class="form-horizontal" action="salvarContato" method="post">
           <fieldset>
             <legend class="text-center">Contate-nos</legend>
     

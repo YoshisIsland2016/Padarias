@@ -65,6 +65,7 @@ public class TesteProdutos {
 		contato = dao.buscaEmail("jorgedamaga@gmail.com");
 		dao.close();
 		Assert.assertEquals(null, produto);
+		
 	}
 	
 
