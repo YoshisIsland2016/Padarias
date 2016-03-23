@@ -12,10 +12,11 @@
   width:24.6%;
   padding:1%;
   margin: 1%;
+  margin-bottom:5%;
   float:left;
-  text-align: center;
-  font-size: 20px;
+  text-align: center;  
   border-radius:10px;
+  font-size:1vw;
 }
 .produto img{
   margin-top:1%;
