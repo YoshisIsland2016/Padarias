@@ -36,7 +36,7 @@ public class ProdutoDao {
 			
 			stmt.execute();
 			stmt.close();
-			con.close();			
+						
 		} catch (SQLException e) {			
 			e.printStackTrace();
 			throw new RuntimeException(e);
@@ -59,7 +59,7 @@ public class ProdutoDao {
 			}
 			rs.close();
 			stmt.close();
-			con.close();
+			
 		}catch(SQLException e){
 			throw new RuntimeException(e);
 		}
@@ -81,7 +81,7 @@ public class ProdutoDao {
 			
 			stmt.execute();			
 			stmt.close();
-			con.close();
+			
 			return true;
 		}catch(SQLException e){
 			throw new RuntimeException(e);			
@@ -103,7 +103,7 @@ public class ProdutoDao {
 			}
 			rs.close();
 			stmt.close();
-			con.close();
+			
 			return produto;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
@@ -117,7 +117,7 @@ public class ProdutoDao {
 			stmt.setInt(1, id);
 			
 			stmt.execute();
-			con.close();
+			
 			return true;
 		}catch(SQLException e){
 			throw new RuntimeException(e);
@@ -207,7 +207,7 @@ public class ProdutoDao {
 			
 			rs.close();
 			stmt.close();
-			con.close();
+			
 			
 			return produtos;
 		}catch(SQLException e){
@@ -230,5 +230,7 @@ public class ProdutoDao {
         
         return produto;
     }
-	
+	public void close() throws SQLException {
+		con.close();
+	}
 }

@@ -46,6 +46,7 @@ public class TesteCategorias {
 		Assert.assertEquals(qtdInicio - 1, qtdFim);
 		
 	}
+	
 	@Test
 	public void testeAlterarCategoria() throws SQLException {
 
@@ -60,6 +61,18 @@ public class TesteCategorias {
 		dao.close();
 		Assert.assertEquals(null, categoria);
 	}
-
+	
+	@Test
+	public void testeBuscarCategoria() throws SQLException {
+		
+		CategoriaDao dao = new CategoriaDao();
+		Categoria categoria = new Categoria();
+		categoria.setId_categoria(2);
+		categoria.setNome_categoria("doces");
+		categoria.setDescricao("açucar demais");
+		dao.getBuscar("doces", "acucar demais");
+		dao.close();
+		Assert.assertEquals(null, categoria);
+	}
 
 }

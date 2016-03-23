@@ -59,5 +59,19 @@ public class TesteContatos {
 		Assert.assertEquals(qtdInicio - 1, qtdFim);
 
 	}
+	
+	@Test
+	public void testeBuscarContato() throws SQLException {
+
+		ContatoDao dao = new ContatoDao();
+		Contato contato = new Contato();
+		
+		contato.setNome("jorgedamaga");
+		contato.setEmail("jorgedamaga@gmail.com");
+		dao.getBuscar("jorgedamaga", "jorgedamaga@gmail.com");
+		dao.close();
+		Assert.assertEquals(null, contato);
+	}
+
 
 }

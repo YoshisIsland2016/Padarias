@@ -60,4 +60,7 @@ public class AdministradorDao {
         
         return administrador;
     }
+	public void close() throws SQLException {
+		con.close();
+	}
 }

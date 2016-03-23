@@ -2,14 +2,17 @@ package br.com.teste.yoshisisland.padaria;
 import java.sql.SQLException;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-import br.com.yoshimachine.padaria.dao.ContatoDao;
+
 import br.com.yoshimachine.padaria.dao.ProdutoDao;
 import br.com.yoshimachine.padaria.model.Categoria;
-import br.com.yoshimachine.padaria.model.Contato;
 import br.com.yoshimachine.padaria.model.Produto;
 
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TesteProdutos {
 	@Test
 	public void testeInserirProduto() {
@@ -58,16 +61,33 @@ public class TesteProdutos {
 		ProdutoDao dao = new ProdutoDao();
 		Produto produto = new Produto();
 		produto = dao.buscaId(1);
-		
-		contato.setNome("jorgedamaga2");
-		contato.setMensagem("jorge danado da maga");
-		dao.getAlterar(contato);
-		contato = dao.buscaEmail("jorgedamaga@gmail.com");
+		produto.setNome_produto("bolo de goiaba");;
+		produto.setCategoriafk(null);
+		produto.setPreco(12.3);
+		produto.setPromocao(false);
+		produto.setImagem(null);	
+		produto.setDescricao("e de goiaba");
+		dao.getAlterar(produto);
+		produto = dao.buscaId(1);
 		dao.close();
+		
 		Assert.assertEquals(null, produto);
 		
 	}
 	
-
+	@Test
+	public void testeBuscarProduto() throws SQLException {
+		
+		ProdutoDao dao = new ProdutoDao ();
+		Produto produto = new Produto();
+		
+		produto.setNome_produto("rocambole");
+		produto.setCategoriafk(null);
+		produto.setPromocao(true);
+		
+		dao.getBuscar("rocambole", null, true);
+		dao.close();
+		Assert.assertEquals(null,produto);
+	}
 }
 
